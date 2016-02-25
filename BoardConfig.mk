@@ -120,7 +120,6 @@ DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
 
 # TODO
 # Init
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Keylayout
 PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:system/usr/keylayout/qwerty.kl, $(PRODUCT_COPY_FILES))
