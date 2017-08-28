@@ -113,6 +113,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8952 \
     liboverlay
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    Doze
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
