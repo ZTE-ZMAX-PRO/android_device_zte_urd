@@ -1,5 +1,5 @@
 # ADSP
-bin/adsprpcd
+bin/adsprpcd:vendor/bin/adsprpcd
 vendor/lib64/libadsprpc.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
@@ -61,19 +61,19 @@ etc/acdbdata/QRD/QRD_Headset_cal.acdb
 etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 
 # Bluetooth
-bin/hci_qcomm_init
+bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 vendor/lib64/libbtnv.so
 
 # FM Radio
 bin/fm_qsoc_patches
 
 # Camera
-bin/mm-qcamera-daemon
-lib/hw/camera.msm8952.so
-lib/libmmcamera_interface.so
-lib/libmmjpeg_interface.so
-lib/libmm-qcamera.so
-lib/libqomx_core.so
+bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
+lib/hw/camera.msm8952.so:vendor/lib/hw/camera.msm8952.so
+lib/libmmcamera_interface.so:vendor/lib/libmmcamera_interface.so
+lib/libmmjpeg_interface.so:vendor/lib/libmmjpeg_interface.so
+lib/libmm-qcamera.so:vendor/lib/libmm-qcamera.so
+lib/libqomx_core.so:vendor/lib/libqomx_core.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libImgFvDetect.so
 vendor/lib/libjpegdhw.so
@@ -702,14 +702,14 @@ vendor/lib/libchromatix_csidtg_cpp_preview.so
 vendor/lib/libchromatix_csidtg_common.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw
+etc/firmware/cpp_firmware_v1_10_0.fw:vendor/etc/firmware/cpp_firmware_v1_10_0.fw
+etc/firmware/cpp_firmware_v1_1_1.fw:vendor/etc/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw:vendor/etc/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw:vendor/etc/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw:vendor/etc/firmware/cpp_firmware_v1_4_0.fw
+etc/firmware/cpp_firmware_v1_5_0.fw:vendor/etc/firmware/cpp_firmware_v1_5_0.fw
+etc/firmware/cpp_firmware_v1_6_0.fw:vendor/etc/firmware/cpp_firmware_v1_6_0.fw
+etc/firmware/cpp_firmware_v1_8_0.fw:vendor/etc/firmware/cpp_firmware_v1_8_0.fw
 
 # Camera sensors
 vendor/lib/libmmcamera_s5k5e8.so
@@ -743,7 +743,7 @@ vendor/lib/libmmcamera_csidtg.so
 vendor/lib/libmmcamera_t4kb3.so
 
 # DRM
-bin/qseecomd
+bin/qseecomd:vendor/bin/qseecomd
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libQSEEComAPI.so
@@ -802,17 +802,17 @@ vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno.so
 
 # Graphics firmware
-etc/firmware/a530_pm4.fw
-etc/firmware/a530_pfp.fw
-etc/firmware/a420_pm4.fw
-etc/firmware/a420_pfp.fw
-etc/firmware/a330_pm4.fw
-etc/firmware/a330_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/a300_pfp.fw
-etc/firmware/a225p5_pm4.fw
-etc/firmware/a225_pm4.fw
-etc/firmware/a225_pfp.fw
+etc/firmware/a530_pm4.fw:vendor/firmware/a530_pm4.fw
+etc/firmware/a530_pfp.fw:vendor/firmware/a530_pfp.fw
+etc/firmware/a420_pm4.fw:vendor/firmware/a420_pm4.fw
+etc/firmware/a420_pfp.fw:vendor/firmware/a420_pfp.fw
+etc/firmware/a330_pm4.fw:vendor/firmware/a330_pm4.fw
+etc/firmware/a330_pfp.fw:vendor/firmware/a330_pfp.fw
+etc/firmware/a300_pm4.fw:vendor/firmware/a300_pm4.fw
+etc/firmware/a300_pfp.fw:vendor/firmware/a300_pfp.fw
+etc/firmware/a225p5_pm4.fw:vendor/firmware/a225p5_pm4.fw
+etc/firmware/a225_pm4.fw:vendor/firmware/a225_pm4.fw
+etc/firmware/a225_pfp.fw:vendor/firmware/a225_pfp.fw
 
 # IMS
 # Disabled below since they are not working
@@ -864,7 +864,7 @@ vendor/lib64/lib-dplmedia.so
 vendor/lib64/libimscamera_jni.so
 
 # IPA
-bin/ipacm-diag
+bin/ipacm-diag:vendor/bin/ipacm-diag
 
 # Keymaster
 vendor/lib64/hw/keystore.msm8952.so
@@ -883,29 +883,29 @@ lib/libextmedia_jni.so
 lib64/libextmedia_jni.so
 
 # Media firmware
-etc/firmware/venus.b00
-etc/firmware/venus.b01
-etc/firmware/venus.b02
-etc/firmware/venus.b03
-etc/firmware/venus.b04
-etc/firmware/venus.mbn
-etc/firmware/venus.mdt
-etc/firmware/venus-v1.b00
-etc/firmware/venus-v1.b01
-etc/firmware/venus-v1.b02
-etc/firmware/venus-v1.b03
-etc/firmware/venus-v1.b04
-etc/firmware/venus-v1.mbn
-etc/firmware/venus-v1.mdt
+etc/firmware/venus.b00:vendor/firmware/venus.b00
+etc/firmware/venus.b01:vendor/firmware/venus.b01
+etc/firmware/venus.b02:vendor/firmware/venus.b02
+etc/firmware/venus.b03:vendor/firmware/venus.b03
+etc/firmware/venus.b04:vendor/firmware/venus.b04
+etc/firmware/venus.mbn:vendor/firmware/venus.mbn
+etc/firmware/venus.mdt:vendor/firmware/venus.mdt
+etc/firmware/venus-v1.b00:vendor/firmware/venus-v1.b00
+etc/firmware/venus-v1.b01:vendor/firmware/venus-v1.b01
+etc/firmware/venus-v1.b02:vendor/firmware/venus-v1.b02
+etc/firmware/venus-v1.b03:vendor/firmware/venus-v1.b03
+etc/firmware/venus-v1.b04:vendor/firmware/venus-v1.b04
+etc/firmware/venus-v1.mbn:vendor/firmware/venus-v1.mbn
+etc/firmware/venus-v1.mdt:vendor/firmware/venus-v1.mdt
 
 # Perf
-bin/msm_irqbalance
+bin/msm_irqbalance:vendor/bin/msm_irqbalance
 vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
 # Peripheral manager
-bin/pm-service
+bin/pm-service:vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
@@ -924,11 +924,11 @@ vendor/lib/libmm-qdcm-diag.so
 vendor/lib/libmm-qdcm.so
 
 # Sensors
-bin/sensors.qcom|ca26ac3c7f372197edc5931755e9484a142727fc
+bin/sensors.qcom:vendor/bin/sensors.qcom|ca26ac3c7f372197edc5931755e9484a142727fc
 etc/sensors/hals.conf
 etc/sensors/sensor_def_qcomdev.conf|99e0d1b9407a4ec74d1880814cd2f44083e1c96f
-lib64/hw/sensors.msm8952.so|750e57f84e64634fd9e111f63fb10da7f11426f2
-lib64/libsensorservice.so|1b370cde57331673e79f2bb30c96fbf4fbd20e46
+lib64/hw/sensors.msm8952.so:vendor/lib64/hw/sensors.msm8952.so|750e57f84e64634fd9e111f63fb10da7f11426f2
+lib64/libsensorservice.so:vendor/lib64/libsensorservice.so|1b370cde57331673e79f2bb30c96fbf4fbd20e46
 vendor/lib64/libsensor1.so|53e5c5ed1f33beb2bc50b17b2f948e3c739c487a
 vendor/lib64/libsensor_reg.so|756294293ea9c7f6ba35a0fa5fa67885ff462bfb
 vendor/lib64/sensors.ssc.so|53488f3253a779cf06d233823127f350519815a5
@@ -941,7 +941,7 @@ vendor/lib/libthermalclient.so
 
 # Time services
 -app/TimeService/TimeService.apk
-bin/time_daemon
+bin/time_daemon:vendor/bin/time_daemon
 -vendor/lib64/libtime_genoff.so
 -vendor/lib64/libTimeService.so
 -vendor/lib/libtime_genoff.so
