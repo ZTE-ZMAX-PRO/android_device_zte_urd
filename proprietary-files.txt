@@ -752,12 +752,12 @@ vendor/lib64/libssd.so
 vendor/lib/libQSEEComAPI.so
 
 # Fingerprint
-bin/gx_fpd
-lib64/hw/fingerprint.goodix.default.so:lib64/hw/fingerprint.goodix.so
-lib64/hw/gxfingerprint.default.so
-lib64/libfp_client.so
-lib64/libfpnav.so
-lib64/libfpservice.so
+bin/gx_fpd:vendor/bin/gx_fpd
+lib64/hw/fingerprint.goodix.default.so:vendor/lib64/hw/fingerprint.goodix.so
+lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so
+lib64/libfp_client.so:vendor/lib64/libfp_client.so
+lib64/libfpnav.so:vendor/lib64/libfpnav.so
+lib64/libfpservice.so:vendor/lib64/libfpservice.so
 vendor/lib64/hw/gatekeeper.msm8952.so
 
 # Firmware
@@ -815,9 +815,10 @@ etc/firmware/a225_pm4.fw
 etc/firmware/a225_pfp.fw
 
 # IMS
--vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
--framework/imscmlibrary.jar
+# Disabled below since they are not working
+#-vendor/app/ims/ims.apk
+#-vendor/app/imssettings/imssettings.apk
+#-framework/imscmlibrary.jar
 bin/imscmservice
 bin/imsdatadaemon
 bin/imsqmidaemon
@@ -951,18 +952,18 @@ vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # GPS
-lib64/hw/gps.default.so
-lib64/libgps.utils.so
-lib64/libloc_api_v02.so
-lib64/libloc_core.so
-lib64/libloc_ds_api.so
-lib64/libloc_eng.so
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
 etc/xtra_root_cert.pem
 framework/com.qti.location.sdk.jar
+lib64/hw/gps.default.so:vendor/lib64/hw/gps.default.so
+lib64/libgps.utils.so:vendor/lib64/libgps.utils.so
+lib64/libloc_api_v02.so:vendor/lib64/libloc_api_v02.so
+lib64/libloc_core.so:vendor/lib64/libloc_core.so
+lib64/libloc_ds_api.so:vendor/lib64/libloc_ds_api.so
+lib64/libloc_eng.so:vendor/lib64/libloc_eng.so
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
-vendor/lib64/hw/flp.default.so
+vendor/lib64/hw/flp.default.so:vendor/lib64/hw/flp.default.so
 vendor/lib64/libalarmservice_jni.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libflp.so
@@ -977,7 +978,7 @@ vendor/lib64/libulp2.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 
 # QMI
-bin/irsc_util
+bin/irsc_util:vendor/bin/irsc_util
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -1012,14 +1013,13 @@ vendor/lib/libqmi.so
 vendor/lib/libsmemlog.so
 
 # Radio
-bin/netmgrd
-bin/qmuxd
-bin/radish
-bin/rmt_storage
-bin/tftp_server
-framework/qti-telephony-common.jar
-lib64/libmodemapi.so
-lib64/libvendorutils.so
+bin/netmgrd:vendor/bin/netmgrd
+bin/qmuxd:vendor/bin/qmuxd
+bin/radish:vendor/bin/radish
+bin/rmt_storage:vendor/bin/rmt_storage
+bin/tftp_server:vendor/bin/tftp_server
+lib64/libmodemapi.so:lib64/libmodemapi.so
+lib64/libvendorutils.so:vendor/lib64/libvendorutils.so
 vendor/bin/qti
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libconfigdb.so
@@ -1033,3 +1033,14 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 vendor/lib/libmdmdetect.so
 vendor/qcril.db
+
+# DRM
+bin/qseecomd:recovery/root/sbin/qseecomd
+vendor/lib64/hw/keystore.msm8952.so:recovery/root/vendor/lib64/hw/keystore.msm8952.so
+vendor/lib64/libdiag.so:recovery/root/vendor/lib64/libdiag.so
+vendor/lib64/libdrmfs.so:recovery/root/vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so:recovery/root/vendor/lib64/libdrmtime.so
+vendor/lib64/libQSEEComAPI.so:recovery/root/vendor/lib64/libQSEEComAPI.so
+vendor/lib64/librpmb.so:recovery/root/vendor/lib64/librpmb.so
+vendor/lib64/libssd.so:recovery/root/vendor/lib64/libssd.so
+vendor/lib64/libtime_genoff.so:recovery/root/vendor/lib64/libtime_genoff.so
