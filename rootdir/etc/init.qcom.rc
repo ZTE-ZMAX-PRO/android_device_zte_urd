@@ -35,6 +35,7 @@ on early-init
     setprop ro.wcnss.serialno ${ro.boot.serialno}
 
 on init
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
