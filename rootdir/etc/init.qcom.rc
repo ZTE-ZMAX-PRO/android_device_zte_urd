@@ -335,22 +335,11 @@ service charger /charger
     group graphics system
     seclabel u:r:healthd:s0
 
-service cnd /system/vendor/bin/cnd
-    class late_start
-    socket cnd stream 660 root inet
-    writepid /dev/cpuset/system-background/tasks
-
 service gx_fpd /system/bin/gx_fpd
     class late_start
     user root
     group system
     onrestart restart fingerprintd
-
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    onrestart restart gx_fpd
-    writepid /dev/cpuset/system-background/tasks
 
 on property:wc_transport.start_hci=true
     start start_hci_filter
