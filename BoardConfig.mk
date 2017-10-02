@@ -135,7 +135,7 @@ TARGET_USE_SDCLANG := true
 
 # TODO:
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/recovery.fstab
 
 # TODO:
 # RIL
