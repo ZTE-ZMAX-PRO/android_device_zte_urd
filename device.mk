@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
 # TODO
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl-legacy \
+    android.hardware.camera.provider@2.4-impl \
     camera.msm8952 \
     Snap
 
