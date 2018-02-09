@@ -150,7 +150,9 @@ void Light::setSpeakerBatteryLightLocked() {
         setSpeakerLightLocked(mBatteryState);
     } else {
         /* Lights off */
-        mIndicator << 0 << std::endl;
+        LightState state;
+        memset(&state, 0, sizeof(state));
+        setSpeakerLightLocked(state);
     }
 }
 
@@ -177,8 +179,8 @@ void Light::setSpeakerLightLocked(const LightState& state) {
         }
     }
     bool flash = (state.flashMode == Flash::TIMED);
-    uint32_t hold_time = state->flashOnMS / 250;
-    uint32_t off_time = state->flashOffMS / 250;
+    uint32_t hold_time = state.flashOnMs / 250;
+    uint32_t off_time = state.flashOffMs / 250;
 
     if (color_idx < 0 || color_val == 0) {
         for (i = 0; i < 3; ++i) {
