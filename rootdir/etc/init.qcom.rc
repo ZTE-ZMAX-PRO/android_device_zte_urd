@@ -338,7 +338,7 @@ service charger /charger
     group graphics system
     seclabel u:r:healthd:s0
 
-service gx_fpd /system/bin/gx_fpd
+service gx_fpd /system/vendor/bin/gx_fpd
     class late_start
     user root
     group system
@@ -459,7 +459,7 @@ service qti /system/vendor/bin/qti
     group radio net_raw oem_2950 usb net_admin
     disabled
 
-service sensors /system/bin/sensors.qcom
+service sensors /system/vendor/bin/sensors.qcom
     class late_start
     user root
     group root
