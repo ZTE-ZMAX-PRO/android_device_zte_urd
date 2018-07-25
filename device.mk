@@ -15,20 +15,21 @@
 #
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/zte/jasmine/jasmine-vendor.mk)
+$(call inherit-product-if-exists, vendor/zte/urd/urd-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 800
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
 
-$(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # Permissions
@@ -104,6 +105,12 @@ PRODUCT_PACKAGES += \
     memtrack.msm8952 \
     liboverlay
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    fingerprintd
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.hardware.fingerprint=goodix
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flp.conf:system/etc/flp.conf \
@@ -125,7 +132,7 @@ PRODUCT_PACKAGES += \
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/idc/synaptics_dsx.idc:system/usr/idc/synaptics_dsx.idc
+    $(LOCAL_PATH)/idc/syna-touchscreen.idc:system/usr/idc/syna-touchscreen.idc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
@@ -187,8 +194,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_jasmine
+# PRODUCT_PACKAGES += \
+#    librecovery_updater_jasmine
 
 # RIL
 PRODUCT_PACKAGES += \

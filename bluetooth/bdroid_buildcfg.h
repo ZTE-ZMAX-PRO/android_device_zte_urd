@@ -19,7 +19,7 @@
 
 #define BLUETOOTH_QTI_SW TRUE
 
-#define BTM_DEF_LOCAL_NAME   "ZTE K88"
+#define BTM_DEF_LOCAL_NAME   "ZTE ZMAX PRO"
 
 #define BLE_VND_INCLUDED TRUE
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */

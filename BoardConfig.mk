@@ -16,7 +16,7 @@
 
 BOARD_VENDOR := zte
 
-LOCAL_PATH := device/zte/jasmine
+LOCAL_PATH := device/zte/urd
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
@@ -51,14 +51,14 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk ramoops.mem_address=0x9fd00000 ramoops.mem_size=0x200000 ramoops.console_size=0x100000
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 #ENABLE_CPUSETS := true
 #ENABLE_SCHEDBOOST := true
 TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/zte/msm8952
-TARGET_KERNEL_CONFIG := lineage_jasmine_defconfig
+TARGET_KERNEL_SOURCE := kernel/zte/urd
+TARGET_KERNEL_CONFIG := lineage_urd_defconfig
 #TARGET_USES_UNCOMPRESSED_KERNEL := true
 
 # Audio
@@ -103,7 +103,7 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
@@ -138,8 +138,8 @@ TW_INCLUDE_CRYPTO := true
 endif
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_jasmine
-TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
+# TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_jasmine
+# TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 # RIL
 TARGET_RIL_VARIANT := caf
@@ -165,17 +165,17 @@ WIFI_DRIVER_FW_PATH_STA     := "sta"
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME     := "wlan"
 
-TARGET_OTA_ASSERT_DEVICE := jasmine
+TARGET_OTA_ASSERT_DEVICE := urd
 
-# FM radia
+# FM radio
 BOARD_HAVE_QCOM_FM := true
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 50331648
-BOARD_CACHEIMAGE_PARTITION_SIZE := 1073741824
+BOARD_CACHEIMAGE_PARTITION_SIZE := 536870912
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 50331648
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 10735303680
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 26906442752
 
 # inherit from the proprietary version
--include vendor/zte/jasmine/BoardConfigVendor.mk
+-include vendor/zte/urd/BoardConfigVendor.mk
