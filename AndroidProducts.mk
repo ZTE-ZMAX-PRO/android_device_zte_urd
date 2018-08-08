@@ -14,5 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_urd.mk \
-    $(LOCAL_DIR)/aosp_urd.mk
+    $(LOCAL_DIR)/full_urd.mk 
