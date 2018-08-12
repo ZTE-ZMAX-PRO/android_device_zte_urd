@@ -117,6 +117,7 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:syst
 TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
+BOARD_LIGHTS_VARIANT := aw2013
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Power
