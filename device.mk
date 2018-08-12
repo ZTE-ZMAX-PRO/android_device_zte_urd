@@ -133,6 +133,9 @@ PRODUCT_PACKAGES += \
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/syna-touchscreen.idc:system/usr/idc/syna-touchscreen.idc
+    
+# Keylayout
+PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:system/usr/keylayout/qwerty.kl, $(PRODUCT_COPY_FILES))
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
