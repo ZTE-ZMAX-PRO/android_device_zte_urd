@@ -23,8 +23,8 @@ include $(CLEAR_VARS)
 
 ADSP_IMAGES := \
     adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 adsp.b07 \
-    adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.b13 adsp.b14 adsp.mdt \
-    adpver.cfg
+    adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.b13 adsp.b14 adsp.b15 \
+    adsp.mdt adpver.cfg
 
 ADSP_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(ADSP_IMAGES)))
 $(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
@@ -99,66 +99,6 @@ $(WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/wcnss/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_SYMLINKS)
-
-FINGERID_IMAGES := \
-    fingerid.b00 fingerid.b01 fingerid.b02 fingerid.b03 fingerid.mdt
-
-FINGERID_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FINGERID_IMAGES)))
-$(FINGERID_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "FINGERID firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(FINGERID_SYMLINKS)
-
-FINGERPR_IMAGES := \
-    fingerpr.b00 fingerpr.b01 fingerpr.b02 fingerpr.b03 fingerpr.mdt
-
-FINGERPR_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FINGERPR_IMAGES)))
-$(FINGERPR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "FINGERPR firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(FINGERPR_SYMLINKS)
-
-GOODIXFP_IMAGES := \
-    goodixfp.b00 goodixfp.b01 goodixfp.b02 goodixfp.b03 goodixfp.mdt
-
-GOODIXFP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(GOODIXFP_IMAGES)))
-$(GOODIXFP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "GOODIXFP firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(GOODIXFP_SYMLINKS)
-
-SYNAFP_IMAGES := \
-    synafp.b00 synafp.b01 synafp.b02 synafp.b03 synafp.mdt
-
-SYNAFP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(SYNAFP_IMAGES)))
-$(SYNAFP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "SYNAFP firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(SYNAFP_SYMLINKS)
-
-FPCTZAPP_IMAGES := \
-    fpctzapp.b00 fpctzapp.b01 fpctzapp.b02 fpctzapp.b03 fpctzapp.mdt
-
-FPCTZAPP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FPCTZAPP_IMAGES)))
-$(FPCTZAPP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "FPCTZAPP firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	@$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(FPCTZAPP_SYMLINKS)
 
 RFS_ADSP_SYMLINKS := $(TARGET_OUT)/rfs/msm/adsp
 $(RFS_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
