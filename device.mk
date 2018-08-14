@@ -95,6 +95,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Charger
+PRODUCT_PACKAGES += \
+charger_res_images
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8952 \
@@ -116,6 +120,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/configs/xtwifi.conf:system/etc/xtwifi.conf
+
+# IMS
+PRODUCT_PACKAGES += \
+    libshims_ims
 
 # Init
 PRODUCT_PACKAGES += \
@@ -167,6 +175,7 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    libmm-omxcore \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \

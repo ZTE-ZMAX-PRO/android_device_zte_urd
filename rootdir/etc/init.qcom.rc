@@ -120,6 +120,11 @@ on boot
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
 
+    # NFC
+    setprop ro.nfc.port "I2C"
+    chmod 0660 /dev/pn548
+    chown nfc system /dev/pn548
+
     # Set graphic node permissions
     chown system graphics /sys/class/graphics/fb0/mdp/bw_mode_bitmap
     chown system graphics /sys/class/graphics/fb0/idle_time
@@ -241,6 +246,10 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
 
+    # NFC local data and nfcee xml storage
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
+
     # Sensor
     mkdir /persist/sensors 0775 system system
     chmod 664 /persist/sensors/sensors_settings
@@ -314,6 +323,18 @@ service charger /charger
 service cnd /system/bin/cnd
     class late_start
     socket cnd stream 660 root inet
+    writepid /dev/cpuset/system-background/tasks
+
+service gx_fpd /system/bin/gx_fpd
+    class late_start
+    user root
+    group system
+    onrestart restart fingerprintd
+
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    onrestart restart gx_fpd
     writepid /dev/cpuset/system-background/tasks
 
 on property:wc_transport.start_hci=true
@@ -536,6 +557,13 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
     user root
     oneshot
 
+service ril-daemon2 /system/bin/rild -c 2
+    class main
+    socket rild2 stream 660 root radio
+    socket rild-debug2 stream 660 radio system
+    user root
+    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag diag log
+
 service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class main
     user root
@@ -623,11 +651,4 @@ service wcnss-service /system/bin/wcnss_service
     class late_start
     user system
     group system wifi radio
-    oneshot
-
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    class late_start
-    user system
-    group system
-    disabled
     oneshot
