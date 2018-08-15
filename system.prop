@@ -31,6 +31,7 @@ audio.pp.asphere.enabled=false
 audio.safx.pbe.enabled=true
 av.debug.disable.pers.cache=true
 
+ro.zte.audio.hifitype=dual
 tunnel.audio.encode = false
 
 media.aac_51_output_enabled=true
