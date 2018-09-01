@@ -85,6 +85,9 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_NON_TREBLE_CAMERA := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+	/system/bin/mediaserver=23 \
+	/system/vendor/bin/mm-qcamera-daemon=23
 
 # Dex
 ifeq ($(HOST_OS),linux)
