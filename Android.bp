@@ -1,5 +1,0 @@
-subdirs = [
-    "init",
-    "light",
-    "usb",
-]
