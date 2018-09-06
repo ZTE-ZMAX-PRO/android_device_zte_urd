@@ -1,1 +1,2 @@
 add_lunch_combo lineage_urd-eng
+add_lunch_combo lineage_urd-userdebug
