@@ -175,8 +175,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
 # Lights
-PRODUCT_PACKAGES += \
-    lights.msm8952
+#PRODUCT_PACKAGES += \
+#    lights.msm8952
 
 # LiveDisplay
 PRODUCT_PACKAGES += \

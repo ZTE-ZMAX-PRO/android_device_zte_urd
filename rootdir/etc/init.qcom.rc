@@ -120,11 +120,6 @@ on boot
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
 
-    # NFC
-    setprop ro.nfc.port "I2C"
-    chmod 0660 /dev/pn548
-    chown nfc system /dev/pn548
-
     # Set graphic node permissions
     chown system graphics /sys/class/graphics/fb0/mdp/bw_mode_bitmap
     chown system graphics /sys/class/graphics/fb0/idle_time
@@ -148,10 +143,28 @@ on boot
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
 
     # LED
-    chown system system /sys/class/leds/flashlight/brightness
-    chown system system /sys/class/leds/red/led_time
-    chown system system /sys/class/leds/green/led_time
-    chown system system /sys/class/leds/blue/led_time
+    chown system system /sys/class/leds/zte-torch-light/brightness
+    chmod 0664 /sys/class/leds/zte-torch-light/brightness
+    chown system system /sys/class/leds/torch-light/brightness
+
+    chown system system /sys/class/leds/keyboard-backlight/brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/button-backlight/brightness
+    chown system system /sys/class/leds/jogball-backlight/brightness
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/red/device/grpfreq
+    chown system system /sys/class/leds/red/device/grppwm
+    chown system system /sys/class/leds/red/device/blink
+    chown system system /sys/class/leds/aw2013_led/device/red_brightness
+    chown system system /sys/class/leds/aw2013_led/device/green_brightness
+    chown system system /sys/class/leds/aw2013_led/device/blue_brightness
+    chown system system /sys/class/leds/aw2013_led/device/mode
+    chown system system /sys/class/leds/aw2013_led/brightness
 
 on post-fs-data
     # Create directory for TZ Apps
@@ -352,6 +365,13 @@ service start_hci_filter /system/bin/wcnss_filter
 service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     class core
     user root
+    oneshot
+
+service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
+    class late_start
+    user system
+    group system
+    disabled
     oneshot
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
