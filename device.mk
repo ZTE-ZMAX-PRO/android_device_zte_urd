@@ -113,7 +113,7 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-charger_res_images
+    charger_res_images
 
 # Display
 PRODUCT_PACKAGES += \
@@ -129,6 +129,10 @@ PRODUCT_PACKAGES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.hardware.fingerprint=goodix
 
+# Gesture Handler
+PRODUCT_PACKAGES += \
+    GestureHandler
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flp.conf:system/etc/flp.conf \
@@ -136,10 +140,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/configs/xtwifi.conf:system/etc/xtwifi.conf
-
-# IMS
-PRODUCT_PACKAGES += \
-    libshims_ims
 
 # Init
 PRODUCT_PACKAGES += \
@@ -236,8 +236,8 @@ PRODUCT_PACKAGES += \
     librmnetctl
 
 # Thermal
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
 
 # Wifi
 PRODUCT_PACKAGES += \

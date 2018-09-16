@@ -32,7 +32,7 @@
 #define SUCCESS 0
 #define FAILED -1
 
-#define WIFIMAC_PATH "/persist/wifimac.dat"
+#define WIFIMAC_PATH "/persist/wifimac2.dat"
 
 int wcnss_init_qmi(void)
 {
