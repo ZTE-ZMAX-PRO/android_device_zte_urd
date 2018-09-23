@@ -26,7 +26,6 @@
 #
 
 import init.qcom.usb.rc
-import init.target.rc
 import init.qcom.power.rc
 
 on early-init
