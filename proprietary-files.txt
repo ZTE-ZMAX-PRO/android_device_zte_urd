@@ -927,7 +927,6 @@ vendor/lib/libmm-qdcm.so
 bin/sensors.qcom:vendor/bin/sensors.qcom|ca26ac3c7f372197edc5931755e9484a142727fc
 etc/sensors/hals.conf
 etc/sensors/sensor_def_qcomdev.conf|99e0d1b9407a4ec74d1880814cd2f44083e1c96f
-lib64/hw/sensors.msm8952.so:vendor/lib64/hw/sensors.msm8952.so|750e57f84e64634fd9e111f63fb10da7f11426f2
 lib64/libsensorservice.so:vendor/lib64/libsensorservice.so|1b370cde57331673e79f2bb30c96fbf4fbd20e46
 vendor/lib64/libsensor1.so|53e5c5ed1f33beb2bc50b17b2f948e3c739c487a
 vendor/lib64/libsensor_reg.so|756294293ea9c7f6ba35a0fa5fa67885ff462bfb

@@ -151,6 +151,9 @@ TARGET_USE_SDCLANG := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/recovery.fstab
 
+# Sensors
+USE_SENSOR_MULTI_HAL := true
+
 # TODO:
 # RIL
 TARGET_RIL_VARIANT := caf
