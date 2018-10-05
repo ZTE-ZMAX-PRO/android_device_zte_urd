@@ -3,3 +3,5 @@ binder_call(system_server, gx_fpd);
 allow system_server gx_fpd_service:service_manager find;
 
 qmux_socket(system_server);
+
+allow system_server init:binder call;

@@ -2,3 +2,9 @@ allow init { domain -lmkd -crash_dump }:process noatsecure;
 allow init carrier_file:dir mounton;
 allow init carrier_file:file rw_file_perms;
 set_prop(init, wcnss_prop)
+
+allow init device:chr_file ioctl;
+allow init hal_power_default:process signull;
+allow init socket_device:sock_file { create setattr write };
+allow init system_data_file:file append;
+allow init vendor_file:file execute_no_trans;

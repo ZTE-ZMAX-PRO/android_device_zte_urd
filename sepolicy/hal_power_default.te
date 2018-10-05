@@ -1,0 +1,2 @@
+allow hal_power_default init:unix_stream_socket connectto;
+allow hal_power_default socket_device:sock_file write;
