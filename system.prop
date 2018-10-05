@@ -66,6 +66,9 @@ ro.frp.pst=/dev/block/platform/soc.0/7824900.sdhci/by-name/config
 # Fingerprint
 ro.hardware.fingerprint=goodix
 
+# Media
+persist.media.treble_omx=false
+
 # NITZ
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
