@@ -9,6 +9,5 @@
 /persist        ext4    /dev/block/bootdevice/by-name/persist
 /cache          ext4    /dev/block/bootdevice/by-name/cache
 
-# XXX sdcard, usbstorage
-# /devices/soc.0/7864900.sdhci/mmc_host/mmc*              auto                auto    defaults                                                                                            voldmanaged=sdcard1:auto,noemulatedsd,encryptable=footer
-# /devices/platform/msm_hsusb*                            auto                auto    defaults                                                                                            voldmanaged=usbdisk:auto
+/external_sd    vfat    /dev/block/mmcblk1p1    /dev/block/mmcblk1      flags=removable;storage;wipeingui;display="MicroSD"
+/usb-otg        vfat    /dev/block/sda1         /dev/block/sda          flags=removable;storage;wipeingui;display="USB OTG"
