@@ -142,17 +142,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.bt.sh \
-    init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
-    init.recovery.qcom.rc \
+    init.fingerprint.synafp \
     ueventd.qcom.rc
 
 # TODO:
 # Input
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/idc/syna-touchscreen.idc:system/usr/idc/syna-touchscreen.idc
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/idc/syna-touchscreen.idc:system/usr/idc/syna-touchscreen.idc
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -179,13 +178,13 @@ PRODUCT_COPY_FILES += \
 
 # TODO:
 # Lights
-#PRODUCT_PACKAGES += \
-#    lights.msm8952
+PRODUCT_PACKAGES += \
+    lights.msm8952
 
 # TODO:
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    pp_calib_data_zteSAM-S6E3FA3_SAM_10801920_6P0Inch.xml
+#PRODUCT_PACKAGES += \
+#    pp_calib_data_zteSAM-S6E3FA3_SAM_10801920_6P0Inch.xml
 
 # TODO:
 # Media
@@ -274,7 +273,7 @@ PRODUCT_COPY_FILES += \
 
 # TODO:
 # FM radio
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni \
-    init.qcom.fm.sh
+#PRODUCT_PACKAGES += \
+#    FMRadio \
+#    libfmjni \
+#    init.qcom.fm.sh
