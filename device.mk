@@ -166,12 +166,10 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     ipacm
 
-# TODO:
 # IRQ
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/vendor/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
-# TODO:
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
@@ -189,17 +187,9 @@ PRODUCT_PACKAGES += \
 # TODO:
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/media_codecs_dolby.xml:system/etc/media_codecs_dolby.xml \
-    $(LOCAL_PATH)/audio/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/audio/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/audio/media_codecs_8956_v1.xml:system/etc/media_codecs_8956_v1.xml \
-    $(LOCAL_PATH)/audio/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/audio/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
-    $(LOCAL_PATH)/audio/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
-    $(LOCAL_PATH)/audio/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
-    $(LOCAL_PATH)/audio/media_codecs_8956.xml:system/etc/media_codecs_8956.xml 
-
-PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
@@ -223,7 +213,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8952
 
-# TODO:
 # QMI
 PRODUCT_PACKAGES += \
     dsi_config.xml \
