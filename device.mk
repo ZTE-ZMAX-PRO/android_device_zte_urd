@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
-    init.fingerprint.synafp \
+    init.fingerprint.goodix_fp.rc \
     ueventd.qcom.rc
 
 # TODO:
