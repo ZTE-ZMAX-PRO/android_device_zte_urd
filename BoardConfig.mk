@@ -131,14 +131,6 @@ TARGET_USE_SDCLANG := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # TODO:
-# TWRP
-ifeq ($(RECOVERY_VARIANT),twrp)
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.twrp
-TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)/twrp
-TW_INCLUDE_CRYPTO := true
-endif
-
-# TODO:
 # RIL
 TARGET_RIL_VARIANT := caf
 
