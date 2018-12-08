@@ -53,9 +53,8 @@ failed ()
 
 program_bdaddr ()
 {
-  /system/bin/btnvtool -O
+  /system/bin/bt_mac_writer -O
   logi "Bluetooth Address programmed successfully"
-  chmod 0664 /persist/.bt_nv.bin
 }
 
 #
@@ -65,21 +64,21 @@ config_bt ()
 {
   baseband=`getprop ro.baseband`
   target=`getprop ro.board.platform`
+  nap_enable=`getprop persist.bt.nap.enable`
   if [ -f /sys/devices/soc0/soc_id ]; then
     soc_hwid=`cat /sys/devices/soc0/soc_id`
   else
     soc_hwid=`cat /sys/devices/system/soc/soc0/id`
   fi
   btsoc=`getprop qcom.bluetooth.soc`
-# zte add for project control
-  product_model=`getprop ro.product.model`
 
-# zte add below log
+
+  # zte add below log
   logi "init.qcom.bt.sh baseband = $baseband"
   logi "init.qcom.bt.sh target = $target"
   logi "init.qcom.bt.sh soc_hwid = $soc_hwid"
   logi "init.qcom.bt.sh btsoc = $btsoc"
-  logi "init.qcom.bt.sh name = $product_name"
+  logi "init.qcom.bt.sh nap_enable = $nap_enable"
 
   case $baseband in
     "apq")
@@ -141,15 +140,14 @@ config_bt ()
               ;;
         esac
 
-		# add by zte for project control (Z988=P895A18))
-	    case $product_model in
-	      "Z988" | "Z981" | "K88" )
-		      setprop ro.qualcomm.bluetooth.nap false
-		      ;;
-	      *)
-		      setprop ro.qualcomm.bluetooth.nap true
-		      ;;
-	    esac
+        case $nap_enable in
+          "false")
+              setprop ro.qualcomm.bluetooth.nap false
+              ;;
+          *)
+              setprop ro.qualcomm.bluetooth.nap true
+              ;;
+        esac
         ;;
     *)
         setprop ro.qualcomm.bluetooth.opp true
