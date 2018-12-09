@@ -278,3 +278,6 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni \
     init.qcom.fm.sh
+
+PRODUCT_PACKAGES += \
+    IMSEnabler
