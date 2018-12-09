@@ -104,6 +104,9 @@ TARGET_NO_RPC := true
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
+# Keylayout
+PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:system/usr/keylayout/qwerty.kl, $(PRODUCT_COPY_FILES))
+
 # TODO:
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
