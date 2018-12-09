@@ -829,6 +829,8 @@ vendor/lib/libOmxApeDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
+lib/libextmedia_jni.so
+lib64/libextmedia_jni.so
 
 # Media firmware
 etc/firmware/venus.b00
