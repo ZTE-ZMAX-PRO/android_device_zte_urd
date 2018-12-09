@@ -274,7 +274,7 @@ PRODUCT_COPY_FILES += \
 
 # TODO:
 # FM radio
-#PRODUCT_PACKAGES += \
-#    FMRadio \
-#    libfmjni \
-#    init.qcom.fm.sh
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni \
+    init.qcom.fm.sh
