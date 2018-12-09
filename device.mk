@@ -150,10 +150,9 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-# TODO:
 # Input
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/idc/syna-touchscreen.idc:system/usr/idc/syna-touchscreen.idc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/idc/syna-touchscreen.idc:system/usr/idc/syna-touchscreen.idc
 
 # Keylayout
 PRODUCT_COPY_FILES += \
