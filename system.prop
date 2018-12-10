@@ -109,6 +109,9 @@ persist.ims.disableADBLogs=2
 persist.ims.disableDebugLogs=0
 persist.ims.disableQXDMLogs=0
 persist.ims.disableIMSLogs=0
+# Enable these two below to start ims service(not ready for prime time yet...)
+#sys.ims.QMI_DAEMON_STATUS=1
+#sys.ims.DATA_DAEMON_STATUS=1
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
