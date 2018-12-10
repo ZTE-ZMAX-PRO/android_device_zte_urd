@@ -1017,6 +1017,7 @@ bin/qmuxd
 bin/radish
 bin/rmt_storage
 bin/tftp_server
+framework/qti-telephony-common.jar
 lib64/libmodemapi.so
 lib64/libvendorutils.so
 vendor/bin/qti
