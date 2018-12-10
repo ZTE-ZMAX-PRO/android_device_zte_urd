@@ -118,6 +118,9 @@ TARGET_INIT_VENDOR_LIB := libinit_urd
 # Keylayout
 PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qwerty.kl, $(PRODUCT_COPY_FILES))
 
+# IPA
+USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
+
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
