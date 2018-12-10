@@ -816,6 +816,7 @@ etc/firmware/a225_pfp.fw
 
 # IMS
 -vendor/app/ims/ims.apk
+-vendor/app/imsettings/imssettings.apk
 -framework/imscmlibrary.jar
 bin/imscmservice
 bin/imsdatadaemon
