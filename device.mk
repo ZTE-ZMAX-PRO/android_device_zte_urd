@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
 # TODO:
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service.tulip
+    android.hardware.biometrics.fingerprint@2.0-service.urd
 
 # TODO:
 # Gesture Handler
