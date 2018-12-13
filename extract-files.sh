@@ -1,61 +1,66 @@
-#!/bin/bash
-#
-# Copyright (C) 2018 The LineageOS Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+    #!/bin/bash
+    #
+    # Copyright (C) 2018 The LineageOS Project
+    #
+    # Licensed under the Apache License, Version 2.0 (the "License");
+    # you may not use this file except in compliance with the License.
+    # You may obtain a copy of the License at
+    #
+    # http://www.apache.org/licenses/LICENSE-2.0
+    #
+    # Unless required by applicable law or agreed to in writing, software
+    # distributed under the License is distributed on an "AS IS" BASIS,
+    # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    # See the License for the specific language governing permissions and
+    # limitations under the License.
+    #
 
-set -e
-export DEVICE=urd
-export VENDOR=zte
+    set -e
 
-# Load extractutils and do some sanity checks
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+    DEVICE=urd
+    VENDOR=zte
 
-CM_ROOT="$MY_DIR"/../../..
+    # Load extractutils and do some sanity checks
+    MY_DIR="${BASH_SOURCE%/*}"
+    if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-HELPER="$CM_ROOT"/vendor/aosp/build/tools/extract_utils.sh
-if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
-    exit 1
-fi
-. "$HELPER"
+    CM_ROOT="$MY_DIR"/../../..
 
-if [ $# -eq 0 ]; then
-  SRC=adb
-else
-  if [ $# -eq 1 ]; then
-    SRC=$1
-  else
-    echo "$0: bad number of arguments"
-    echo ""
-    echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
-    echo ""
-    echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
-    echo "the device using adb pull."
-    exit 1
-  fi
-fi
+    HELPER="$CM_ROOT"/vendor/aosp/build/tools/extract_utils.sh
+    if [ ! -f "$HELPER" ]; then
+        echo "Unable to find helper script at $HELPER"
+        exit 1
+    fi
+    . "$HELPER"
 
-# Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" true
-extract "$MY_DIR"/proprietary-files.txt "$SRC"
+    if [ $# -eq 0 ]; then
+      SRC=adb
+    else
+      if [ $# -eq 1 ]; then
+        SRC=$1
+      else
+        echo "$0: bad number of arguments"
+        echo ""
+        echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
+        echo ""
+        echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
+        echo "the device using adb pull."
+        exit 1
+      fi
+    fi
 
-if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
-    # Reinitialize the helper for device
+    # Initialize the helper
     setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
-    extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
-fi
 
-"$MY_DIR"/setup-makefiles.sh
+    extract "$MY_DIR"/proprietary-files.txt "$SRC"
+
+    # qseecomd linkage for recovery
+    RECOVERY_QSEECOMD="$CM_ROOT/vendor/$VENDOR/$DEVICE/proprietary/recovery/root/sbin/qseecomd"
+    if [ -f "$RECOVERY_QSEECOMD" ]; then
+      sed 's@/system/bin/linker64@/sbin/linker64\x0\x0\x0\x0\x0\x0@' \
+          < "$RECOVERY_QSEECOMD" \
+          > "$RECOVERY_QSEECOMD.tmp"
+      mv "$RECOVERY_QSEECOMD.tmp" "$RECOVERY_QSEECOMD"
+    fi
+
+    "$MY_DIR"/setup-makefiles.sh
