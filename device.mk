@@ -305,7 +305,7 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.tulip
+    android.hardware.usb@1.0-service.urd
 
 # Vibrator
 PRODUCT_PACKAGES += \
