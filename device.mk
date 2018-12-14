@@ -337,5 +337,5 @@ PRODUCT_PACKAGES += \
     libfmjni \
     init.qcom.fm.sh
 
-PRODUCT_PACKAGES += \
-    IMSEnabler
+#PRODUCT_PACKAGES += \
+#    IMSEnabler
