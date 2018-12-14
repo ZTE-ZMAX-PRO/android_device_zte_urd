@@ -155,6 +155,8 @@ USE_SENSOR_MULTI_HAL := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/libizat_core.so|/system/vendor/lib/libshim_gps.so \
+    /system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so \
     /system/vendor/lib64/hw/gxfingerprint.default.so|/system/vendor/lib64/libshim_atomic.so
 
 # TODO:
