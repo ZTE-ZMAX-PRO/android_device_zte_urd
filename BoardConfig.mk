@@ -168,11 +168,6 @@ TARGET_RIL_VARIANT := caf
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
-# TWRP Support - Optional
-ifeq ($(WITH_TWRP),true)
--include $(LOCAL_PATH)/twrp.mk
-endif
-
 # Wifi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_HAS_QCOM_WLAN         := true
