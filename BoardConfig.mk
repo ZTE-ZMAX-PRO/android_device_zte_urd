@@ -158,6 +158,14 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libizat_core.so|/system/vendor/lib/libshim_gps.so \
     /system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so \
     /system/vendor/lib64/hw/gxfingerprint.default.so|/system/vendor/lib64/libshim_atomic.so
+    
+# TWRP
+ifeq ($(RECOVERY_VARIANT),twrp)
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.twrp
+TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)/twrp
+TW_INCLUDE_CRYPTO := true
+TW_USE_TOOLBOX := true
+endif    
 
 # TODO:
 # RIL
