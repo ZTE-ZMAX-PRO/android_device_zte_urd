@@ -308,20 +308,20 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
 
     mkdir /data/system/fingerprint 0700 system system
-
-    setprop vold.post_fs_data_done 1
-
-on property:vold.decrypt=trigger_restart_framework
-    start qcom-c_main-sh
-    start config_bt_addr
-    start config_bluetooth
-    start wcnss-service
-
+    
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
+    setprop vold.post_fs_data_done 1
+
+#on property:vold.decrypt=trigger_restart_framework
+#    start qcom-c_main-sh
+#    start config_bt_addr
+#    start config_bluetooth
+#    start wcnss-service
+
     # Bluetooth MAC address
-    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
+    #chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
 
 # Services begin here
 
