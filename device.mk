@@ -217,10 +217,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.urd
 
-# TODO:
 # LiveDisplay
-#PRODUCT_PACKAGES += \
-#    pp_calib_data_zteSAM-S6E3FA3_SAM_10801920_6P0Inch.xml
+PRODUCT_PACKAGES += \
+    pp_calib_data_zteSAM-S6E3FA3_SAM_10801920_6P0Inch.xml \
+    vendor.lineage.livedisplay@1.0-service-legacymm
 
 # TODO:
 # Media
