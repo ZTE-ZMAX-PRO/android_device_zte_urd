@@ -173,8 +173,6 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.fingerprint.goodix_fp.rc \
-    init.fingerprint.synafp.rc \
     init.qcom.bt.sh \
     init.qcom.power.rc \
     init.qcom.rc \
