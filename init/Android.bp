@@ -1,0 +1,5 @@
+cc_library_static {
+    name: "libinit_urd",
+    include_dirs: ["system/core/base/include", "system/core/init", "external/selinux/libselinux/include"],
+    srcs: ["init_urd.cpp"],
+}
