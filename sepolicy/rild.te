@@ -1,1 +1,5 @@
-allow rild audioserver_service:service_manager find;
+allow rild servicemanager:binder call;
+allow rild default_android_service:service_manager find;
+allow rild radio_data_file:file { read write getattr open ioctl lock };
+allow rild radio_data_file:dir getattr;
+allow rild vendor_file:file ioctl;

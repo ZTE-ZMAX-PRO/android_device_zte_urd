@@ -1,7 +1,6 @@
-# Allow system server access to gx_fpd daemon
-binder_call(system_server, gx_fpd);
-allow system_server gx_fpd_service:service_manager find;
-
-qmux_socket(system_server);
-
-allow system_server init:binder call;
+allow system_server init:binder { call transfer };
+allow system_server sensors_device:chr_file getattr;
+allow system_server sensors_socket:sock_file write;
+allow system_server sensors:unix_stream_socket connectto;
+allow system_server default_android_service:service_manager find;
+allow system_server dalvikcache_data_file:file execute;

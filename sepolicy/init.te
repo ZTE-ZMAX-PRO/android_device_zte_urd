@@ -1,10 +1,10 @@
-allow init { domain -lmkd -crash_dump }:process noatsecure;
-allow init carrier_file:dir mounton;
-allow init carrier_file:file rw_file_perms;
-set_prop(init, wcnss_prop)
-
-allow init device:chr_file ioctl;
-allow init hal_power_default:process signull;
-allow init socket_device:sock_file { create setattr write };
-allow init system_data_file:file append;
+allow init shell_exec:file execute_no_trans;
+allow init hwservicemanager:binder { call transfer };
+allow init hal_usb_hwservice:hwservice_manager add;
+allow init servicemanager:binder { call transfer };
 allow init vendor_file:file execute_no_trans;
+allow init hal_light_hwservice:hwservice_manager add;
+allow init tee_device:chr_file { write read open ioctl };
+allow init ion_device:chr_file { read open };
+allow init default_android_service:service_manager { add find };
+allow init hal_fingerprint_hwservice:hwservice_manager add;

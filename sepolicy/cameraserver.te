@@ -1,3 +1,0 @@
-allow cameraserver debugfs_ion:file r_file_perms;
-
-allow cameraserver socket_device:sock_file write;
