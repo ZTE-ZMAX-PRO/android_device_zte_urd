@@ -883,7 +883,7 @@ etc/sensors/sensor_def_qcomdev.conf
 lib64/libsensorservice.so:vendor/lib64/libsensorservice.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
-vendor/lib64/sensors.ssc.so|53488f3253a779cf06d233823127f350519815a5
+vendor/lib64/sensors.ssc.so|28fc2e656a43ccadc78b592abc2e212a72724148
 
 # Thermal
 vendor/bin/thermal-engine
