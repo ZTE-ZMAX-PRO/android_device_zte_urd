@@ -65,7 +65,7 @@ bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 vendor/lib64/libbtnv.so
 
 # FM Radio
-bin/fm_qsoc_patches
+bin/fm_qsoc_patches:vendor/bin/fm_qsoc_patches
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
