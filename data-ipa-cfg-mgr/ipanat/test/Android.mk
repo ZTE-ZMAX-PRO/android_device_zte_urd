@@ -1,6 +1,5 @@
-BOARD_PLATFORM_LIST := msm8916
-BOARD_PLATFORM_LIST += msm8909
-ifneq ($(call is-board-platform-in-list,$(BOARD_PLATFORM_LIST)),true)
+BOARD_PLATFORM_LIST := test
+ifeq ($(call is-board-platform-in-list,$(BOARD_PLATFORM_LIST)),true)
 ifneq (,$(filter $(QCOM_BOARD_PLATFORMS),$(TARGET_BOARD_PLATFORM)))
 ifneq (, $(filter aarch64 arm arm64, $(TARGET_ARCH)))
 
@@ -12,7 +11,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../ipanat/inc
 
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_ADDITIONAL_DEPENDENCIES := INSTALLED_KERNEL_HEADERS
+LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_MODULE := ipa_nat_test
 LOCAL_SRC_FILES := ipa_nat_test000.c \
