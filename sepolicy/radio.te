@@ -1,0 +1,1 @@
+allow radio hal_imsrtp:unix_stream_socket { connectto };

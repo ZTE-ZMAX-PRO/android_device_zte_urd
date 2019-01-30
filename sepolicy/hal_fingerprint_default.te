@@ -1,0 +1,10 @@
+binder_call(hal_fingerprint_default, servicemanager);
+binder_call(hal_fingerprint_default, keystore);
+binder_call(hal_fingerprint_default, goodix);
+
+allow hal_fingerprint_default keystore_service:service_manager { find };
+allow hal_fingerprint_default goodix_service:service_manager { find };
+
+allow hal_fingerprint_default keystore:keystore_key { add_auth };
+
+add_service(hal_fingerprint_default, fingerprintd_custom_service);

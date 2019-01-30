@@ -1,0 +1,3 @@
+allow dpmd self:capability { dac_override };
+allow dpmd netd:dir { search };
+allow dpmd system_server:dir { search };

@@ -1,54 +1,24 @@
-###################################
-# Primary storage device nodes
-#
-/dev/block/platform/soc.0/7824900.sdhci/by-name/fsg                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/fsc                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/modemst1              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/modemst2              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/ssd                   u:object_r:ssd_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/misc                  u:object_r:misc_partition:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/system                u:object_r:system_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/userdata              u:object_r:userdata_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/dip                   u:object_r:dip_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/mdtp                  u:object_r:mdtp_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/config                u:object_r:frp_block_device:s0
-/dev/block/mmcblk0                                                    u:object_r:root_block_device:s0
-/dev/block/mmcblk0rpmb                                                u:object_r:rpmb_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/boot                  u:object_r:boot_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/recovery              u:object_r:recovery_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
+/dev/block/platform/soc.0/7824900.sdhci/by-name/persist     u:object_r:persist_block_device:s0
 
-###################################
-# Device specific policy
-#
+# Goodix fingerprint daemon
+/(vendor|system/vendor|system)/bin/gx_fpd                   u:object_r:goodix_exec:s0
 
-# Goodix Fingerprint data
-/data/system/fingerprint(/.*)?		u:object_r:gx_fpd_data_file:s0
-/persist/data/gxfp(/.*)?		u:object_r:gx_fpd_data_file:s0
+# Fingerprint
+/system/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom u:object_r:hal_fingerprint_default_exec:s0
 
-# HALs
-/system/vendor/bin/hw/android\.hardware\.light@2\.0-service.urd		u:object_r:hal_light_default_exec:s0
-/system/vendor/bin/hw/android\.hardware\.usb@1\.0-service.urd		u:object_r:hal_usb_default_exec:s0
-/system/vendor/bin/hw/android\.hardware\.vibrator@1\.0-impl		u:object_r:hal_vibrator_default_exec:s0
+# Radio
+/data/misc/radio/qcril.db                                   u:object_r:nv_data_file:s0
 
-# Persist
-/persist/.bt_nv.bin		u:object_r:persist_bluetooth_file:s0
+# Legacy (TODO: move to vendor)
+/sbin/qfipsverify                                           u:object_r:sectest_exec:s0
+/system/bin/ipacm                                           u:object_r:ipacm_exec:s0
+/system/bin/ipacm-diag                                      u:object_r:ipacm-diag_exec:s0
+/system/bin/mm-qcamera-daemon                               u:object_r:mm-qcamerad_exec:s0
+/data/misc/location/xtra/socket_xtra                        u:object_r:location_socket:s0
+/data/misc/location/xtra/socket_hal_xtra                    u:object_r:location_socket:s0
 
-# synapatics fingerprint
-# (/.*)? : change the dir and the files
-/system/vendor/bin/vfmService                      u:object_r:vfmservice_exec:s0
-/dev/validity(/.*)?                         u:object_r:synafp_pipe_file:s0
-/dev/vfsspi                                 u:object_r:synafp_device:s0
-/data/validity(/.*)?                        u:object_r:synafp_data_file:s0
-/system/vendor/bin/fingerprintd_syna               u:object_r:fingerprintd_exec:s0
+/data/misc/tloc(/.*)? u:object_r:tlocd_data_file:s0
 
-# ======goodix fingerprint start=====
-/dev/gf66xx-spi                             u:object_r:gx_fpd_device:s0
-/dev/ttyACM[0-9]*                           u:object_r:gx_fpd_device:s0
-/dev/goodix_fp*                             u:object_r:gx_fpd_device:s0
-/system/vendor/bin/gx_fpd                          u:object_r:gx_fpd_exec:s0
-
-# Goodix Fingerprint data
-/data/system/fingerprint(/.*)?              u:object_r:gx_fpd_data_file:s0
-/persist/data/gxfp(/.*)?                    u:object_r:gx_fpd_data_file:s0
-# ======goodix fingerprint end=====
+/dev/goodix_fp                                             u:object_r:goodix_device:s0
+/data/goodix(/.*)?                                         u:object_r:goodix_data_file:s0
+/dev/i2c_smartpa                                           u:object_r:smartpa_device:s0
