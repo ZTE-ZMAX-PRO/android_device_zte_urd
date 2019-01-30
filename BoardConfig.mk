@@ -78,12 +78,10 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
-# TODO: Different camera
 # Camera
 TARGET_USES_MEDIA_EXTENSIONS := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# TODO:
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
@@ -100,11 +98,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 HAVE_ADRENO_SOURCE:= false
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
-# TODO:
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
-# TODO:
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -123,14 +119,12 @@ TARGET_INIT_VENDOR_LIB := libinit_urd
 # Keylayout
 PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qwerty.kl, $(PRODUCT_COPY_FILES))
 
-# TODO:
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# TODO:
 # Power
 TARGET_HAS_NO_WIFI_STATS := true
 TARGET_RPM_SYSTEM_STAT := /d/rpm_stats
@@ -139,13 +133,11 @@ TARGET_USES_INTERACTION_BOOST := true
 # Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
-# TODO:
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 TARGET_USE_SDCLANG := true
 
-# TODO:
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/recovery.fstab
 
@@ -166,11 +158,9 @@ TW_INCLUDE_CRYPTO := true
 TW_USE_TOOLBOX := true
 endif    
 
-# TODO:
 # RIL
 TARGET_RIL_VARIANT := caf
 
-# TODO:
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 # Include legacy sepolicy to match soc.0 handling of kernels < v3.18
@@ -194,7 +184,6 @@ WIFI_DRIVER_FW_PATH_STA     := "sta"
 
 TARGET_OTA_ASSERT_DEVICE := urd
 
-# TODO
 # FM radio
 BOARD_HAVE_QCOM_FM := true
 

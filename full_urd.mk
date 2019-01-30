@@ -24,6 +24,3 @@ $(call inherit-product, device/zte/urd/device.mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := urd
 PRODUCT_NAME := full_urd
-PRODUCT_BRAND := ZTE
-PRODUCT_MODEL := Z981
-PRODUCT_MANUFACTURER := ZTE

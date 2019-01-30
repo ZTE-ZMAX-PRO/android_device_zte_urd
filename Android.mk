@@ -17,7 +17,6 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),urd)
 include $(call all-makefiles-under,$(LOCAL_PATH))
-include device/zte/urd/tftp.mk
 
 include $(CLEAR_VARS)
 
@@ -146,34 +145,37 @@ $(FPCTZAPP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@$(hide) ln -sf /firmware/image/$(notdir $@) $@
 ALL_DEFAULT_INSTALLED_MODULES += $(FPCTZAPP_SYMLINKS)
 
-RFS_ADSP_SYMLINKS := $(TARGET_OUT)/rfs/msm/adsp
-$(RFS_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@mkdir -p $@/readonly
-	$(hide) ln -sf /firmware $@/readonly/firmware
-	$(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /data/tombstones/lpass $@/ramdumps
-	$(hide) ln -sf /persist/rfs/msm/adsp $@/readwrite
-	$(hide) ln -sf /persist/rfs/shared $@/shared
-
-ALL_DEFAULT_INSTALLED_MODULES += $(RFS_ADSP_SYMLINKS)
-
-RFS_MPSS_SYMLINKS := $(TARGET_OUT)/rfs/msm/mpss
-$(RFS_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@mkdir -p $@/readonly
-	$(hide) ln -sf /firmware $@/readonly/firmware
-	$(hide) ln -sf /firmware/wsd $@/readonly/wsd
-	$(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /data/tombstones/modem $@/ramdumps
-	$(hide) ln -sf /persist/rfs/msm/mpss $@/readwrite
-	$(hide) ln -sf /persist/rfs/shared $@/shared
-
-ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MPSS_SYMLINKS)
-
 WCNSS_CFG_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 $(WCNSS_CFG_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@mkdir -p $(dir $@)
 	$(hide) ln -sf /data/misc/wifi/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_CFG_SYMLINK)
+
+# RFS symlinks
+RFS_SYMLINKS := $(TARGET_OUT)/rfs
+$(RFS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "RFS links"
+	@rm -rf $(TARGET_OUT)/rfs 
+	@mkdir -p $(TARGET_OUT)/rfs/apq/gnss/readonly
+	$(hide) ln -sf /persist/hlos_rfs/shared $(TARGET_OUT)/rfs/apq/gnss/hlos
+	$(hide) ln -sf /data/tombstones/lpass $(TARGET_OUT)/rfs/apq/gnss/ramdumps
+	$(hide) ln -sf /persist/rfs/apq/gnss $(TARGET_OUT)/rfs/apq/gnss/readwrite
+	$(hide) ln -sf /persist/rfs/shared $(TARGET_OUT)/rfs/apq/gnss/shared
+	$(hide) ln -sf /firmware $(TARGET_OUT)/rfs/apq/gnss/readonly/firmware
+	@mkdir -p $(TARGET_OUT)/rfs/msm/adsp/readonly
+	$(hide) ln -sf /persist/hlos_rfs/shared $(TARGET_OUT)/rfs/msm/adsp/hlos
+	$(hide) ln -sf /data/tombstones/lpass $(TARGET_OUT)/rfs/msm/adsp/ramdumps
+	$(hide) ln -sf /persist/rfs/msm/adsp $(TARGET_OUT)/rfs/msm/adsp/readwrite
+	$(hide) ln -sf /persist/rfs/shared $(TARGET_OUT)/rfs/msm/adsp/shared
+	$(hide) ln -sf /firmware $(TARGET_OUT)/rfs/msm/adsp/readonly/firmware
+	@mkdir -p $(TARGET_OUT)/rfs/msm/mpss/readonly
+	$(hide) ln -sf /persist/hlos_rfs/shared $(TARGET_OUT)/rfs/msm/mpss/hlos
+	$(hide) ln -sf /data/tombstones/lpass $(TARGET_OUT)/rfs/msm/mpss/ramdumps
+	$(hide) ln -sf /persist/rfs/msm/mpss $(TARGET_OUT)/rfs/msm/mpss/readwrite
+	$(hide) ln -sf /persist/rfs/shared $(TARGET_OUT)/rfs/msm/mpss/shared
+	$(hide) ln -sf /firmware $(TARGET_OUT)/rfs/msm/mpss/readonly/firmware
+
+ALL_DEFAULT_INSTALLED_MODULES += $(RFS_SYMLINKS)
 
 endif

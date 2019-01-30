@@ -12,15 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Inherit device configuration
 $(call inherit-product, device/zte/urd/full_urd.mk)
 
-# Inherit some common AEX stuff.
+# Inherit some common AOSP stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := urd
 PRODUCT_NAME := aosp_urd
-BOARD_VENDOR := zte
+PRODUCT_BRAND := ZTE
+PRODUCT_MANUFACTURER := ZTE
+
+PRODUCT_GMS_CLIENTID_BASE := android-zte
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="P895T20_MPCS-user 6.0.1 MMB29M 20170802.130758 release-keys"
     
 BUILD_FINGERPRINT := ZTE/P895T20_MPCS/urd:6.0.1/MMB29M/20170802.130758:user/release-keys
+
+# Release name
+PRODUCT_RELEASE_NAME := urd

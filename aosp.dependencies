@@ -1,7 +1,14 @@
 [
   {
-    "repository": "android_device_qcom_common",
-    "target_path": "device/qcom/common"
+    "remote":    "github",
+    "repository": "ZTE-ZMAX-PRO/android_kernel_zte_urd",
+    "target_path": "kernel/zte/urd"
+    "branch": "oreo"
+  },
+  {
+    "remote":    "los",
+    "repository": "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
+    "branch": "lineage-15.1"
   }
 ]
-

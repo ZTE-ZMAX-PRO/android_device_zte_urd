@@ -30,12 +30,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Boot animation
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-
-# TODO:
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -110,19 +104,16 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
-# TODO
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.msm8952 \
     Snap
 
-# TODO:
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# TODO:
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -137,12 +128,10 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8952 \
     memtrack.msm8952
 
-# TODO:
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.0-service.urd
 
-# TODO:
 # Gesture Handler
 PRODUCT_PACKAGES += \
     GestureHandler
@@ -169,7 +158,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl \
     android.hardware.health@1.0-service
 
-# TODO
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -193,7 +181,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/synaptics_rmi4_i2c.kl \
     $(LOCAL_PATH)/keylayout/qwerty.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qwerty.kl
 
-# TODO:
 # IPACM
 PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
@@ -212,7 +199,6 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
-# TODO
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.urd
@@ -222,7 +208,6 @@ PRODUCT_PACKAGES += \
     pp_calib_data_zteSAM-S6E3FA3_SAM_10801920_6P0Inch.xml \
     vendor.lineage.livedisplay@1.0-service-legacymm
 
-# TODO:
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -248,7 +233,6 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
-# TODO:
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti
@@ -259,7 +243,6 @@ PRODUCT_PACKAGES += \
     netmgr_config.xml \
     qmi_config.xml
 
-# TODO:
 # Qualcomm dependencies
 PRODUCT_PACKAGES += \
     libtinyxml
@@ -268,7 +251,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
-# TODO:
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
@@ -289,7 +271,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_atomic
 
-# TODO
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
@@ -306,7 +287,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
-# TODO
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
@@ -331,12 +311,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     $(LOCAL_PATH)/wifi/WCNSS_wlan_dictionary.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
 
-# TODO:
 # FM radio
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni \
     init.qcom.fm.sh
-
-#PRODUCT_PACKAGES += \
-#    IMSEnabler
