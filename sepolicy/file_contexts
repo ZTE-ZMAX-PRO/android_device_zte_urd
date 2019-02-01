@@ -1,10 +1,10 @@
 /dev/block/platform/soc.0/7824900.sdhci/by-name/persist     u:object_r:persist_block_device:s0
 
 # Goodix fingerprint daemon
-/(vendor|system/vendor|system)/bin/gx_fpd                   u:object_r:goodix_exec:s0
+/(vendor|system/vendor)/bin/gx_fpd                          u:object_r:goodix_exec:s0
 
 # Fingerprint
-/system/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom u:object_r:hal_fingerprint_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service\.urd u:object_r:hal_fingerprint_default_exec:s0
 
 # Radio
 /data/misc/radio/qcril.db                                   u:object_r:nv_data_file:s0
@@ -12,8 +12,8 @@
 # Legacy (TODO: move to vendor)
 /sbin/qfipsverify                                           u:object_r:sectest_exec:s0
 /system/bin/ipacm                                           u:object_r:ipacm_exec:s0
-/system/bin/ipacm-diag                                      u:object_r:ipacm-diag_exec:s0
-/system/bin/mm-qcamera-daemon                               u:object_r:mm-qcamerad_exec:s0
+/(vendor|system/vendor)/bin/ipacm-diag                      u:object_r:ipacm-diag_exec:s0
+/(vendor|system/vendor)/bin/mm-qcamera-daemon               u:object_r:mm-qcamerad_exec:s0
 /data/misc/location/xtra/socket_xtra                        u:object_r:location_socket:s0
 /data/misc/location/xtra/socket_hal_xtra                    u:object_r:location_socket:s0
 
