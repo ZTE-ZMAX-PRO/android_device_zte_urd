@@ -3,6 +3,10 @@ vendor/lib/soundfx/libdirac.so|f63826a905b520fa524e4c1b147be7cf65240953
 vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead05ea06ddbdc8108fd4b1
 vendor/etc/diracmobile.config|d781cd6798a7481a8f7128d144abfb2b8794212d
 
+# Audiosphere - from Xiaomi
+lib/soundfx/libasphere.so|72c4e50e1e0058721e213387975f3dde5372d610
+lib64/soundfx/libasphere.so|f08ab7c0697355ece94447dc7d5238c2ba772df4
+
 # ADSP
 bin/adsprpcd:vendor/bin/adsprpcd
 vendor/lib64/libadsprpc.so
