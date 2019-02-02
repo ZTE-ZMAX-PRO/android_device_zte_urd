@@ -23,8 +23,10 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/zte/urd/urd-vendor.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-aosp
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -127,6 +129,10 @@ PRODUCT_PACKAGES += \
     gralloc.msm8952 \
     hwcomposer.msm8952 \
     memtrack.msm8952
+
+# Doze mode
+PRODUCT_PACKAGES += \
+    Doze
 
 # Fingerprint
 PRODUCT_PACKAGES += \
