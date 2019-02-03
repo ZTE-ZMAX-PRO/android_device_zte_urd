@@ -4,7 +4,7 @@
 /(vendor|system/vendor)/bin/gx_fpd                          u:object_r:goodix_exec:s0
 
 # Fingerprint
-/system/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service\.urd u:object_r:hal_fingerprint_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom u:object_r:hal_fingerprint_default_exec:s0
 
 # Radio
 /data/misc/radio/qcril.db                                   u:object_r:nv_data_file:s0
