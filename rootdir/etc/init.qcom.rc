@@ -355,7 +355,6 @@ service gx_fpd /system/vendor/bin/gx_fpd
     user root
     group system
     onrestart restart fingerprintd
-    seclabel u:r:goodix:s0
 
 on property:wc_transport.start_hci=true
     start start_hci_filter
