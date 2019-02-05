@@ -348,7 +348,7 @@ service adsprpcd /system/vendor/bin/adsprpcd
 service charger /charger
     class charger
     group graphics system
-    seclabel u:r:charger:s0
+    seclabel u:r:healthd:s0
 
 service gx_fpd /system/vendor/bin/gx_fpd
     class late_start
@@ -366,14 +366,12 @@ service start_hci_filter /system/bin/wcnss_filter
     class late_start
     user root
     group bluetooth oem_2950
-    seclabel u:r:wcnss_filter:s0
     disabled
 
 service config_bluetooth /system/bin/sh /system/vendor/bin/init.qcom.bt.sh "onboot"
     class core
     user root
     oneshot
-    seclabel u:r:qti_init_shell:s0
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
@@ -386,7 +384,6 @@ service hciattach /system/vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
-    seclabel u:r:qti_init_shell:s0
     disabled
     oneshot
 
@@ -655,7 +652,6 @@ service thermal-engine /system/vendor/bin/thermal-engine
     socket thermal-recv-passive-client stream 0666 system system
     group root
     writepid /dev/cpuset/system-background/tasks
-    seclabel u:r:thermal-engine:s0
 
 service time_daemon /system/vendor/bin/time_daemon
     class late_start
