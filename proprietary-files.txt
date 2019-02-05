@@ -974,7 +974,6 @@ bin/rmt_storage:vendor/bin/rmt_storage|1d991009ffe2fae0c9acae517187ad3bdad8c7b6
 bin/tftp_server:vendor/bin/tftp_server|551c0d49691080245d87be4532b210abe12b1398
 lib64/libmodemapi.so:vendor/lib64/libmodemapi.so|99e0178da60e38ab2dcdfbd9be5e1c803d81f3de
 lib64/libvendorutils.so:vendor/lib64/libvendorutils.so|ae2691cae201a0f9e87a48d7d318f06884c84192
-vendor/bin/qti|033c3a3c58fac411aea08f6cdd828df5f6c303be
 vendor/lib64/com.quicinc.cne.api@1.0.so|503825cc8a3c0d422e16e04b398d2c1924e518ca
 vendor/lib64/com.quicinc.cne.constants@1.0.so|a60fde6f9328635bf43bb7008dd9517e4e749e8b
 vendor/lib64/libcneapiclient.so|33e7465996749a8823ac03e34a94e3112c88dda4

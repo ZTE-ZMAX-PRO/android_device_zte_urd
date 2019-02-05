@@ -464,12 +464,6 @@ service ipacm /system/vendor/bin/ipacm
     group net_admin inet
     disabled
 
-service qti /system/vendor/bin/qti
-    class main
-    user radio
-    group radio net_raw oem_2950 usb net_admin
-    disabled
-
 service sensors /system/vendor/bin/sensors.qcom
     class late_start
     user root
