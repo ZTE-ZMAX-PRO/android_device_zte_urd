@@ -334,13 +334,13 @@ on property:ro.hardware.fingerprint=synafp
 
 # Services begin here
 
-service perfd /system/vendor/bin/perfd
+service vendor.perfd /system/vendor/bin/perfd
     class main
     user root
     disabled
     socket perfd seqpacket 0666 root system
 
-service adsprpcd /system/vendor/bin/adsprpcd
+service vendor.adsprpcd /system/vendor/bin/adsprpcd
     class main
     user media
     group media
@@ -350,7 +350,7 @@ service charger /charger
     group graphics system
     seclabel u:r:healthd:s0
 
-service gx_fpd /system/vendor/bin/gx_fpd
+service vendor.gx_fpd /system/vendor/bin/gx_fpd
     class late_start
     user root
     group system
@@ -380,7 +380,7 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     disabled
     oneshot
 
-service hciattach /system/vendor/bin/init.qcom.bt.sh
+service vendor.hciattach /system/vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
@@ -388,7 +388,7 @@ service hciattach /system/vendor/bin/init.qcom.bt.sh
     oneshot
 
 on property:bluetooth.hciattach=true
-    start hciattach
+    vendor.start hciattach
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
@@ -426,7 +426,7 @@ on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
     start imscmservice
 
-service ppd /system/vendor/bin/mm-pp-daemon
+service vendor.ppd /system/vendor/bin/mm-pp-daemon
     class late_start
     disabled
     user system
@@ -451,13 +451,13 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service ipacm /system/vendor/bin/ipacm
+service vendor.ipacm /system/vendor/bin/ipacm
     class main
     user net_admin
     group net_admin inet
     disabled
 
-service sensors /system/vendor/bin/sensors.qcom
+service vendor.sensors /system/vendor/bin/sensors.qcom
     class late_start
     user root
     group root system
@@ -555,7 +555,7 @@ service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     disabled
     oneshot
 
-service irsc_util /system/vendor/bin/irsc_util "/vendor/etc/sec_config"
+service vendor.irsc_util /system/vendor/bin/irsc_util "/vendor/etc/sec_config"
     class main
     user root
     oneshot
@@ -567,25 +567,25 @@ service ril-daemon2 /system/bin/rild -c 2
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw oem_2950 diag log
 
-service msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class main
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service netmgrd /system/vendor/bin/netmgrd
+service vendor.netmgrd /system/vendor/bin/netmgrd
     class main
     user root
     group root wifi wakelock radio inet
     writepid /dev/cpuset/system-background/tasks
 
-service per_mgr /system/vendor/bin/pm-service
+service vendor.per_mgr /system/vendor/bin/pm-service
     class late_start
     user system
     group system net_raw
     writepid /dev/cpuset/system-background/tasks
 
-service ppd /system/vendor/bin/mm-pp-daemon
+service vendor.ppd /system/vendor/bin/mm-pp-daemon
     class late_start
     disabled
     user system
@@ -598,7 +598,7 @@ on property:init.svc.surfaceflinger=stopped
 on property:init.svc.surfaceflinger=running
     start ppd
 
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -609,29 +609,29 @@ service qcom-sh /system/vendor/bin/init.qcom.sh
     seclabel u:r:qti_init_shell:s0
     oneshot
 
-service qmuxd /system/vendor/bin/qmuxd
+service vendor.qmuxd /system/vendor/bin/qmuxd
     class main
     user root
     group radio audio bluetooth gps nfc oem_2950
     writepid /dev/cpuset/system-background/tasks
 
-service qseecomd /system/vendor/bin/qseecomd
+service vendor.qseecomd /system/vendor/bin/qseecomd
     class core
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service rmt_storage /system/vendor/bin/rmt_storage
+service vendor.rmt_storage /system/vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
     writepid /dev/cpuset/system-background/tasks
 
-service tftp_server /system/vendor/bin/tftp_server
+service vendor.tftp_server /system/vendor/bin/tftp_server
     class main
     user root
 
-service thermal-engine /system/vendor/bin/thermal-engine
+service vendor.thermal-engine /system/vendor/bin/thermal-engine
     class main
     user root
     socket thermal-send-client stream 0666 system system
@@ -640,19 +640,19 @@ service thermal-engine /system/vendor/bin/thermal-engine
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service time_daemon /system/vendor/bin/time_daemon
+service vendor.time_daemon /system/vendor/bin/time_daemon
     class late_start
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service vfmService /system/vendor/bin/vfmService
+service vendor.vfmService /system/vendor/bin/vfmService
     class late_start
     user root
     group system
     onrestart restart fingerprintd_syna
 
-service wcnss-service /system/vendor/bin/wcnss_service
+service vendor.wcnss-service /system/vendor/bin/wcnss_service
     class late_start
     user system
     group system wifi radio
