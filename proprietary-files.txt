@@ -816,9 +816,6 @@ etc/firmware/a225p5_pm4.fw:vendor/firmware/a225p5_pm4.fw
 etc/firmware/a225_pm4.fw:vendor/firmware/a225_pm4.fw
 etc/firmware/a225_pfp.fw:vendor/firmware/a225_pfp.fw
 
-# IPA
-bin/ipacm-diag:vendor/bin/ipacm-diag
-
 # Keymaster
 vendor/lib64/hw/keystore.msm8952.so
 
