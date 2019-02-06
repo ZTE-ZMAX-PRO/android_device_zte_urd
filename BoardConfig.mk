@@ -112,8 +112,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
 
+# TODO
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_urd
 
 # Keylayout
 PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qwerty.kl, $(PRODUCT_COPY_FILES))

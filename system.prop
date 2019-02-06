@@ -73,6 +73,9 @@ audio.playback.mch.downsample=true
 # Factory Reset Protection
 ro.frp.pst=/dev/block/platform/soc.0/7824900.sdhci/by-name/config
 
+# Fingerprint
+ro.hardware.fingerprint=goodix
+
 #low audio flinger standby delay to reduce power consumption
 ro.audio.flinger_standbytime_ms=300
 

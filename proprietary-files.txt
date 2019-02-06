@@ -753,10 +753,8 @@ vendor/lib/libQSEEComAPI.so
 
 # Fingerprint
 bin/gx_fpd:vendor/bin/gx_fpd
-bin/vfmService:vendor/bin/vfmService
 lib64/hw/fingerprint.goodix.default.so:vendor/lib64/hw/fingerprint.goodix.so
 lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so
-lib64/hw/fingerprint.synafp.default.so:vendor/lib64/hw/fingerprint.synafp.default.so
 lib64/libfp_client.so:vendor/lib64/libfp_client.so
 lib64/libfpnav.so:vendor/lib64/libfpnav.so
 lib64/libfpservice.so:vendor/lib64/libfpservice.so
