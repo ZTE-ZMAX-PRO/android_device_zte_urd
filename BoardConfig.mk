@@ -158,9 +158,6 @@ TW_INCLUDE_CRYPTO := true
 TW_USE_TOOLBOX := true
 endif    
 
-# RIL
-TARGET_RIL_VARIANT := caf
-
 # Sepolicy
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
