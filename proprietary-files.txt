@@ -767,52 +767,45 @@ etc/firmware/ice40.bin
 etc/firmware/DE.o.msm8976
 etc/firmware/DE.o.msm8952
 
+# Kang Graphics libraries from ZTE AXON 7 MINI
 # Graphics
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so
-vendor/lib64/egl/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libc2d30-a4xx.so
-vendor/lib64/libC2D2.so
-vendor/lib64/libCB.so
-vendor/lib64/libgsl.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/librs_adreno.so
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/egl/libQTapGLES.so
-vendor/lib/libadreno_utils.so
-vendor/lib/libc2d30-a4xx.so
-vendor/lib/libC2D2.so
-vendor/lib/libCB.so
-vendor/lib/libgsl.so
-vendor/lib/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
-vendor/lib/libOpenCL.so
-vendor/lib/librs_adreno.so
+vendor/lib64/egl/eglSubDriverAndroid.so|7dafba77d771718fb5a266895b5d2e34de70ff82
+vendor/lib64/egl/libEGL_adreno.so|4dcef5ec2b5b669fe5bd3c1fea70ba9e693ff6dc
+vendor/lib64/egl/libGLESv1_CM_adreno.so|9473a9f8e4cdfd3c07af3a81b5996cdf78ff1466
+vendor/lib64/egl/libGLESv2_adreno.so|affa94ff7a58419d969b195e471d7e7bca001caa
+vendor/lib64/egl/libq3dtools_adreno.so|504dfe1e08fdb8181d410a7a3325dcf7a70c5f53
+vendor/lib64/egl/libq3dtools_esx.so|d731f03d41e9f7c77d3ffc567a945ef19d86785c
+vendor/lib64/egl/libQTapGLES.so|88a5fd9a65a7a7730625e1e8123afb7c5887cee7
+vendor/lib64/libadreno_utils.so|bbe160bd638e93d39cf695c39939d8861e39c998
+vendor/lib64/libc2d30-a4xx.so|cdc6c04d391d5f09ea93e91704e3a8a2fa91ed63
+vendor/lib64/libC2D2.so|dbf863824f26bf826a1548038a6b75a6e8843242
+vendor/lib64/libCB.so|049737f48c871168956ad6b12391f19aa34c2779
+vendor/lib64/libgsl.so|875ca59b80e74544679d48598de8567973e9bb43
+vendor/lib64/libllvm-glnext.so|71e4b759ac8e0b382c4c9e458c2f87bbcb6a794d
+vendor/lib64/libllvm-qcom.so|955d4912ad552db61c5cb4b0f36e859156c5a733
+vendor/lib64/libOpenCL.so|fcbeb8db2af41eefe0f664d1ecf62d269413e1ce
+vendor/lib64/librs_adreno.so|de41b1414c85d3fef88a2ee76a3784442e1a1149
+vendor/lib/egl/eglSubDriverAndroid.so|2c120df56552d155be190b1854da022ca26f0b75
+vendor/lib/egl/libEGL_adreno.so|01d273fc5e712d29cf2a80eb9a516568c366aa6d
+vendor/lib/egl/libGLESv1_CM_adreno.so|4252f7c437507c7481e01c973a7cfc1793992ce1
+vendor/lib/egl/libGLESv2_adreno.so|c11b5e1e8df3a0c49c67f6cea0a157c1371efcb3
+vendor/lib/egl/libq3dtools_adreno.so|eb415011ed7caa2a3c6e6b2840d2c01d8368e908
+vendor/lib/egl/libq3dtools_esx.so|625aa84362c2d7dafd936f093f23b4bce7153f4a
+vendor/lib/egl/libQTapGLES.so|9aa7db120a374a4e4613198090dff21352ecbd7e
+vendor/lib/libadreno_utils.so|5e08564566cc29f6730a0ca3ecc950a4417d26f1
+vendor/lib/libc2d30-a4xx.so|89a913924c5bdffea666a97fc9e867a48a92520a
+vendor/lib/libC2D2.so|d27280d62acaf8af19ece876241aa94213aa151b
+vendor/lib/libCB.so|c60466d8901c3f3a0484743072587fda716852fc
+vendor/lib/libgsl.so|99a017c01a4a5620dec3f7c24d04b2f06069438d
+vendor/lib/libllvm-glnext.so|d950102927d132df349ff51f8b76c78551c6ff75
+vendor/lib/libllvm-qcom.so|2db3b26fe660918aadc4ca551d1279ab93e6a82a
+vendor/lib/libOpenCL.so|f7b7b96de1b91d37be4b985a9337ceab9f46aba0
+vendor/lib/librs_adreno.so|d943d919b21c91f8cd80542f6a497e37c4e8635c
 
+# Kang Graphics libraries from ZTE AXON 7 MINI
 # Graphics firmware
-etc/firmware/a530_pm4.fw:vendor/firmware/a530_pm4.fw
-etc/firmware/a530_pfp.fw:vendor/firmware/a530_pfp.fw
-etc/firmware/a420_pm4.fw:vendor/firmware/a420_pm4.fw
-etc/firmware/a420_pfp.fw:vendor/firmware/a420_pfp.fw
-etc/firmware/a330_pm4.fw:vendor/firmware/a330_pm4.fw
-etc/firmware/a330_pfp.fw:vendor/firmware/a330_pfp.fw
-etc/firmware/a300_pm4.fw:vendor/firmware/a300_pm4.fw
-etc/firmware/a300_pfp.fw:vendor/firmware/a300_pfp.fw
-etc/firmware/a225p5_pm4.fw:vendor/firmware/a225p5_pm4.fw
-etc/firmware/a225_pm4.fw:vendor/firmware/a225_pm4.fw
-etc/firmware/a225_pfp.fw:vendor/firmware/a225_pfp.fw
+etc/firmware/a420_pfp.fw:vendor/firmware/a420_pfp.fw|ceb61d9f1385b3f2956d72f33e0bd43cb12f72f0
+etc/firmware/a420_pm4.fw:vendor/firmware/a420_pm4.fw|96addc1f5cb6dd3a57fc40ef0a6ba8721d5b601f
 
 # Keymaster
 vendor/lib64/hw/keystore.msm8952.so
@@ -857,19 +850,20 @@ bin/pm-service:vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
+# Kang Graphics libraries from ZTE AXON 7 MINI
 # Postprocessing
-vendor/bin/mm-pp-daemon
-vendor/lib64/libdisp-aba.so
-vendor/lib64/libmm-als.so
--vendor/lib64/libmm-disp-apis.so
-vendor/lib64/libmm-dspp-utils.so
-vendor/lib64/libmm-qdcm-diag.so
-vendor/lib64/libmm-qdcm.so
-vendor/lib/libmm-als.so
--vendor/lib/libmm-disp-apis.so
-vendor/lib/libmm-dspp-utils.so
-vendor/lib/libmm-qdcm-diag.so
-vendor/lib/libmm-qdcm.so
+vendor/bin/mm-pp-daemon|023469038dc32a023a8d2ae5443707536d231673
+vendor/lib64/libdisp-aba.so|01040287347de2d3ed44217f199524afc502ca47
+vendor/lib64/libmm-als.so|d5d099edfaeb98df348a834027306744e417fa54
+-vendor/lib64/libmm-disp-apis.so|e8e9990830bdf9a011ac87e501f8691b2ae7aa89
+vendor/lib64/libmm-dspp-utils.so|7b6413fc2666f5f990912d41a31d3baedfd4b40b
+vendor/lib64/libmm-qdcm-diag.so|8d9eb9654d2957fb6348cce1fd7e323e414cf4cb
+vendor/lib64/libmm-qdcm.so|6f002b43fdb5cc70c4ee28e739ff1a24bbab889b
+vendor/lib/libmm-als.so|01b7c0a4485621f2a973bd5b69fe360d1697de3f
+-vendor/lib/libmm-disp-apis.so|5dfda7ac66873ddc088e61fa7d5af4c2e3060d93
+vendor/lib/libmm-dspp-utils.so|a047a43f7e57b29b4c0895b7db057af47ded014c
+vendor/lib/libmm-qdcm-diag.so|1578cce3feb7ab96555dba4b1952ac396dc6c4a9
+vendor/lib/libmm-qdcm.so|9c23afd471e0acb11884d2dcee23d43437ce29a7
 
 # Sensors
 bin/sensors.qcom:vendor/bin/sensors.qcom
