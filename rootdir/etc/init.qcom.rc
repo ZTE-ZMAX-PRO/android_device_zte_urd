@@ -389,7 +389,7 @@ service vendor.hciattach /system/vendor/bin/init.qcom.bt.sh
     oneshot
 
 on property:vendor.bluetooth.hciattach=true
-    vendor.start hciattach
+    start vendor.hciattach
 
 on property:vendor.bluetooth.hciattach=false
     setprop vendor.bluetooth.status off
@@ -435,22 +435,22 @@ service vendor.ppd /system/vendor/bin/mm-pp-daemon
     group system graphics
 
 on property:init.svc.surfaceflinger=stopped
-    stop ppd
+    stop vendor.ppd
 
 on property:init.svc.surfaceflinger=running
-    start ppd
+    start vendor.ppd
 
 on property:init.svc.surfaceflinger=restarting
-    stop ppd
+    stop vendor.ppd
 
 on property:init.svc.zygote=stopped
-    stop ppd
+    stop vendor.ppd
 
 on property:init.svc.zygote=running
-    start ppd
+    start vendor.ppd
 
 on property:init.svc.zygote=restarting
-    stop ppd
+    stop vendor.ppd
 
 service vendor.ipacm /system/vendor/bin/ipacm
     class main
@@ -581,10 +581,10 @@ service vendor.ppd /system/vendor/bin/mm-pp-daemon
     group system graphics
 
 on property:init.svc.surfaceflinger=stopped
-    stop ppd
+    stop vendor.ppd
 
 on property:init.svc.surfaceflinger=running
-    start ppd
+    start vendor.ppd
 
 service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
