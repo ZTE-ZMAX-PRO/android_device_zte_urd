@@ -25,6 +25,7 @@ $(call inherit-product, vendor/aosp/common.mk)
 PRODUCT_DEVICE := urd
 PRODUCT_NAME := aosp_urd
 PRODUCT_BRAND := ZTE
+PRODUCT_MODEL := Z981
 PRODUCT_MANUFACTURER := ZTE
 
 PRODUCT_GMS_CLIENTID_BASE := android-zte
