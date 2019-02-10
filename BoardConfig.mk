@@ -83,6 +83,7 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /system/bin/cameraserver=23 \
     /system/vendor/bin/mm-qcamera-daemon=23
 
 # Display
