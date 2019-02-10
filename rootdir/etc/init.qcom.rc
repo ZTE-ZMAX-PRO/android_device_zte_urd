@@ -322,7 +322,7 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on property:ro.hardware.fingerprint=goodix
-    start vendor.gx_fpd
+    start gx_fpd
 
 #on property:vold.decrypt=trigger_restart_framework
 #    start qcom-c_main-sh
@@ -351,7 +351,7 @@ service charger /charger
     group graphics system
     seclabel u:r:healthd:s0
 
-service vendor.gx_fpd /system/vendor/bin/gx_fpd
+service gx_fpd /system/vendor/bin/gx_fpd
     class late_start
     user root
     group system
