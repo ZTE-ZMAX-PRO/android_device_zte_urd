@@ -34,8 +34,6 @@ audio.ds1.metainfo.key=273
 dmid=-1286820014
 
 # Bluetooth
-bluetooth.hfp.client=1
-ro.qualcomm.bt.hci_transport=smd
 vendor.qcom.bluetooth.soc=smd
 
 # Camera
