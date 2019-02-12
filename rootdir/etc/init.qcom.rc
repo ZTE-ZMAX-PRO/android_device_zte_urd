@@ -102,7 +102,7 @@ on boot
     mkdir /persist/drm 0770 system system
     mkdir /persist/alarm 0770 system system
     mkdir /persist/misc 0770 system system
-    mkdir /persist/time 0770 system system
+    mkdir /mnt/vendor/persist/time 0770 system system
 
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
@@ -233,9 +233,6 @@ on post-fs-data
 
     #Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
-
-    # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
 
     mkdir /data/audio/ 0770 media audio
     #Create a folder for SRS to be able to create a usercfg file
@@ -577,11 +574,10 @@ service vendor.thermal-engine /system/vendor/bin/thermal-engine
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.time_daemon /system/vendor/bin/time_daemon
-    class late_start
+service time_daemon /vendor/bin/time_daemon
+    class main
     user root
     group root
-    writepid /dev/cpuset/system-background/tasks
 
 service vendor.wcnss-service /system/vendor/bin/wcnss_service
     class late_start
