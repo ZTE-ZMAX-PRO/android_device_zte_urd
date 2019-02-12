@@ -169,14 +169,13 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.bt.sh \
-    init.qcom.power.rc \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.usb.rc \
-    init.recovery.qcom.rc \
-    ueventd.qcom.rc
+    fstab.urd \
+    init.urd.power.rc \
+    init.urd.rc \
+    init.urd.sh \
+    init.urd.usb.rc \
+    init.urd.power.rc \
+    ueventd.urd.rc
 
 # Input
 PRODUCT_COPY_FILES += \

@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.usb.rc
-import init.qcom.power.rc
+import init.urd.usb.rc
+import init.urd.power.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -63,7 +63,7 @@ on early-boot
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all fstab.qcom
+    mount_all fstab.urd
     mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
 
 on early-boot
@@ -530,7 +530,7 @@ service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
 
-service qcom-sh /system/vendor/bin/init.qcom.sh
+service qcom-sh /system/vendor/bin/init.urd.sh
     class late_start
     user root
     seclabel u:r:qti_init_shell:s0
