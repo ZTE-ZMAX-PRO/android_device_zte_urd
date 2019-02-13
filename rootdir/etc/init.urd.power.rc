@@ -1,5 +1,3 @@
-import /init.recovery.twrp.rc
-
 on boot
     # add a cpuset for the camera daemon
     # we want all the little cores for camera
