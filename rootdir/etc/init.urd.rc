@@ -310,6 +310,11 @@ service vendor.rmt_storage /system/vendor/bin/rmt_storage
     group system wakelock
     writepid /dev/cpuset/system-background/tasks
 
+service vendor.sensors /system/vendor/bin/sensors.qcom
+    class late_start
+    user root
+    group root system
+
 service vendor.tftp_server /system/vendor/bin/tftp_server
     class main
     user root
