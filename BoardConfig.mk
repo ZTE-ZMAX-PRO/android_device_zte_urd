@@ -80,10 +80,25 @@ QCOM_BT_READ_ADDR_FROM_PROP := true
 # Camera
 TARGET_USES_MEDIA_EXTENSIONS := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_USES_QTI_CAMERA_DEVICE := true
+
+# This is needed for us as it disables tcache, which is breaking camera.
+MALLOC_SVELTE := true
+BOARD_GLOBAL_CFLAGS += -DDECAY_TIME_DEFAULT=0
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=23 \
     /system/vendor/bin/mm-qcamera-daemon=23
+
+# Dex
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT_DEBUG_INFO := false
+    USE_DEX2OAT_DEBUG := false
+    DONT_DEXPREOPT_PREBUILTS := true
+    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+  endif
+endif
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -101,6 +116,9 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
+# Exclude serif fonts for saving system.img size.
+EXCLUDE_SERIF_FONTS := true
+
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -116,11 +134,11 @@ DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
 # TODO
 # Init
 
-# Keylayout
-PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qwerty.kl, $(PRODUCT_COPY_FILES))
-
 # IPA
 USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
+
+# Keylayout
+PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qwerty.kl, $(PRODUCT_COPY_FILES))
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
@@ -130,6 +148,8 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Power
 TARGET_HAS_NO_WIFI_STATS := true
+TARGET_RPM_SYSTEM_STAT := /d/rpm_stats
+TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
@@ -150,15 +170,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/hw/camera.vendor.msm8952.so|libshim_camera.so \
     /system/vendor/lib/libizat_core.so|/system/vendor/lib/libshim_gps.so \
     /system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so \
-    /system/vendor/lib64/hw/gxfingerprint.default.so|/system/vendor/lib64/libshim_atomic.so
-    
-# TWRP
-ifeq ($(RECOVERY_VARIANT),twrp)
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.twrp
-TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)/twrp
-TW_INCLUDE_CRYPTO := true
-TW_USE_TOOLBOX := true
-endif    
+    /system/vendor/lib64/hw/gxfingerprint.default.so|/system/vendor/lib64/libshim_atomic.so 
 
 # Sepolicy
 include device/qcom/sepolicy-legacy/sepolicy.mk
