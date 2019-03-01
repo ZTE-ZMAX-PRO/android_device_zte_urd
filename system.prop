@@ -68,6 +68,9 @@ ro.hardware.fingerprint=goodix
 #low audio flinger standby delay to reduce power consumption
 ro.audio.flinger_standbytime_ms=300
 
+# Media
+persist.media.treble_omx=false
+
 # NITZ
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=

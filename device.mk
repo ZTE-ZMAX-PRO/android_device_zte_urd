@@ -238,7 +238,6 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-impl \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \
