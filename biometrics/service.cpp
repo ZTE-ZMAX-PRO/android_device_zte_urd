@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "biometrics.fingerprint@2.1-service"
+#define LOG_TAG "biometrics.fingerprint@2.0-service"
 
 #include <binder/IPCThreadState.h>
 #include <binder/IServiceManager.h>
 #include <binder/PermissionCache.h>
 #include <binder/ProcessState.h>
 #include <utils/String16.h>
+#include <keystore/keystore.h> // for error codes
 
 #include <android/log.h>
 #include <hidl/HidlSupport.h>
@@ -53,9 +54,8 @@ int main() {
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
     configureRpcThreadpool(1, false /*callerWillJoin*/);
     if (bio != nullptr) {
-        ret = bio->registerAsService();
-        if (ret != android::OK) {
-            ALOGE("Cannot register BiometricsFingerprint service: %d", ret);
+        if (::android::OK != bio->registerAsService()) {
+            return 1;
         }
     } else {
         ALOGE("Can't create instance of BiometricsFingerprint, nullptr");

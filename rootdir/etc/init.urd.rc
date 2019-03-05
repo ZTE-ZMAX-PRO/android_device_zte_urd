@@ -156,6 +156,9 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
+on property:ro.hardware.fingerprint=goodix
+    start gx_fpd
+
 on early-boot
     chown root audio /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
