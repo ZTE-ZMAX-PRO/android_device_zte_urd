@@ -172,6 +172,9 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so \
     /system/vendor/lib64/hw/gxfingerprint.default.so|/system/vendor/lib64/libshim_atomic.so 
 
+# RIL
+TARGET_RIL_VARIANT := caf
+
 # Sepolicy
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
