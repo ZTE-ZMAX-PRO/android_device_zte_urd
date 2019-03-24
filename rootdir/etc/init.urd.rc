@@ -77,6 +77,10 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
+    # Create directory for DRM
+    mkdir /data/drm/rights 0770 drm drm
+    mkdir /data/drm/widevine 0770 drm drm
+
     # Create directory for audio
     mkdir /data/data/media 0770 media media
     mkdir /data/misc/audio 0770 audio audio

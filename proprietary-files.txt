@@ -67,9 +67,6 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|20e66aaca57c6ba6df800
 vendor/lib64/libbtnv.so|136dc47f7d16a841e9c6ad909753e96a41392534
 vendor/lib64/libbt-hidlclient.so|0b0b69ef9787e3cd5409f0050cad03698dd6ce26
 
-# Bluetooth (shared dependencies) - from daisy - PKQ1.180917.001
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|dc576dfcb0bf390a106b5ed8861e7f547110cbf1
-
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 lib/hw/camera.msm8952.so:vendor/lib/hw/camera.vendor.msm8952.so
@@ -770,6 +767,9 @@ etc/firmware/ice40.bin
 etc/firmware/DE.o.msm8976
 etc/firmware/DE.o.msm8952
 
+# FM Radio - from daisy - PKQ1.180917.001
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|dc576dfcb0bf390a106b5ed8861e7f547110cbf1
+
 # Kang Graphics libraries from ZTE AXON 7 MINI
 # Graphics
 vendor/lib64/egl/eglSubDriverAndroid.so|7dafba77d771718fb5a266895b5d2e34de70ff82
@@ -853,8 +853,7 @@ bin/pm-service:vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
-# Kang Graphics libraries from ZTE AXON 7 MINI
-# Postprocessing
+# Postprocessing - from ZTE AXON 7 MINI
 vendor/bin/mm-pp-daemon|023469038dc32a023a8d2ae5443707536d231673
 vendor/lib64/libdisp-aba.so|01040287347de2d3ed44217f199524afc502ca47
 vendor/lib64/libmm-als.so|d5d099edfaeb98df348a834027306744e417fa54
@@ -888,9 +887,8 @@ vendor/lib/libthermalclient.so
 vendor/bin/time_daemon|d67f1c50583b5efca0f5baea00a51056a798b7f8
 vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
 
-# Widevine
-vendor/lib/libWVStreamControlAPI_L3.so
-vendor/lib/mediadrm/libwvdrmengine.so
+# Widevine - from angler - OPR6.170623.017 factory image
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
 
 # GPS
 etc/permissions/com.qti.location.sdk.xml
@@ -918,8 +916,7 @@ vendor/lib64/liblowi_client.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 
-# Kang QMI libraries from ZTE AXON 7 MINI
-# QMI
+# QMI - from ZTE AXON 7 MINI
 bin/irsc_util:vendor/bin/irsc_util|373d65ad45ad220a9f0e7cd786139686150a6da2
 vendor/lib64/libdiag.so|21179ec006ac3b16cb6c4e1388ff69c9c9bd2086
 vendor/lib64/libdsi_netctrl.so|83f6f49f0d398395107a2786b07ad74369b8ec8a
@@ -954,8 +951,7 @@ vendor/lib/libqmiservices.so|dc61aa1bc4e2b18e974d8c92559d3e70a048fb80
 vendor/lib/libqmi.so|8a28ab168aa359d91c3c9b61b3e68b8b9cfe61ba
 vendor/lib/libsmemlog.so|c632a70764ee1d6416ce1758f4d10cd6983d204d
 
-# Kang Radio libraries from ZTE AXON 7 MINI
-# Radio
+# Radio - from ZTE AXON 7 MINI
 bin/netmgrd:vendor/bin/netmgrd|1a5e528226eaa8d9d0eb361a8bbe46598f2d2792
 bin/qmuxd:vendor/bin/qmuxd|0024c0daffbdd48285748e4d89185f4a561513b9
 bin/radish:vendor/bin/radish|2b0ca471667916334de5e9ade842e7f6b24432aa
