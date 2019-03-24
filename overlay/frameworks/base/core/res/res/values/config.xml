@@ -322,17 +322,6 @@
          performance profiles  -->
     <!-- <string name="config_perf_profile_default_entry" translatable="false">1</string> -->
 
-    <!-- Flag specifying whether VoLTE should be available for carrier: independent of
-         carrier provisioning. If false: hard disabled. If true: then depends on carrier
-         provisioning, availability etc -->
-    <bool name="config_carrier_volte_available">false</bool>
-
-    <!-- Flag specifying whether VoLTE availability is based on provisioning -->
-    <!-- <bool name="config_carrier_volte_provisioned">false</bool> -->
-
-    <!-- Flag specifying whether VT is available on device -->
-    <bool name="config_device_vt_available">false</bool>
-
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
