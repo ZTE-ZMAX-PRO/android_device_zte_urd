@@ -107,12 +107,6 @@ on post-fs-data
     mkdir /data/dpm 0771 system system
     mkdir /data/dpm/nsrm 0771 system system
 
-    # fingerprint
-    chown system system  /dev/goodix_fp
-    chmod 0644 /dev/goodix_fp
-    chown system system  /vendor/bin/gx_fpd
-    chmod 0755 /vendor/bin/gx_fpd
-
     # Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
 
@@ -157,10 +151,13 @@ on post-fs-data
     chown radio radio /carrier
     chown radio radio /carrier/htcril.db
 
+    # Fingerprint
+    mkdir /data/system/fingerprint 0700 system system
+
     setprop vold.post_fs_data_done 1
 
 on property:ro.hardware.fingerprint=goodix
-    start gx_fpd
+    start vendor.gx_fpd
 
 on early-boot
     chown root audio /sys/kernel/boot_adsp/boot
@@ -238,10 +235,11 @@ service vendor.adsprpcd /system/vendor/bin/adsprpcd
     user media
     group media
 
-service gx_fpd /vendor/bin/gx_fpd
+service vendor.gx_fpd /system/vendor/bin/gx_fpd
     class late_start
     user root
-    group root system
+    group system
+    onrestart restart fingerprintd
 
 service vendor.ipacm /system/vendor/bin/ipacm
     class main

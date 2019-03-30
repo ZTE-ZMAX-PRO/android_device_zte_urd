@@ -144,7 +144,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service.urd
+    android.hardware.biometrics.fingerprint@2.0-service-custom
 
 # Gesture Handler
 PRODUCT_PACKAGES += \
@@ -175,6 +175,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.urd \
+    init.goodix.sh \
     init.urd.power.rc \
     init.urd.rc \
     init.urd.sh \
