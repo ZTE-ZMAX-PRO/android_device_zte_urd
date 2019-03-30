@@ -128,8 +128,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/configs/hidl/manifest.xml
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/configs/hidl/compatibility_matrix.xml
 
 # TODO
 # Init
@@ -150,9 +150,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 TARGET_HAS_NO_WIFI_STATS := true
 TARGET_RPM_SYSTEM_STAT := /d/rpm_stats
 TARGET_USES_INTERACTION_BOOST := true
-
-# Properties
-TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
