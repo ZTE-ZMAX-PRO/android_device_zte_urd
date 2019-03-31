@@ -246,7 +246,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+    $(LOCAL_PATH)/configs/thermal-engine-zte.conf:system/etc/thermal-engine-zte.conf
 
 # Vendor security patch level
 VENDOR_SECURITY_PATCH := 2017-08-01

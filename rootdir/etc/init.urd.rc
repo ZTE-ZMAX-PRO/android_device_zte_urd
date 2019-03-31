@@ -146,8 +146,8 @@ on post-fs-data
     mkdir /data/misc/perfd 2755 root system
     mkdir /data/system/perfd 2770 root system
 
-    # Create directory for time-services
-    mkdir /data/time/ 0700 system system
+    # Create /data/vendor/time folder for time-services
+    mkdir /data/vendor/time/ 0700 system system
 
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
@@ -179,6 +179,8 @@ on boot
     mkdir /dev/socket/qmux_bluetooth 2770 bluetooth bluetooth
     mkdir /dev/socket/qmux_gps 0770 gps gps
     mkdir /dev/socket/qmux_radio 0770 radio radio
+
+    mkdir /persist/time 0770 system system
 
     # Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
@@ -344,7 +346,7 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.time_daemon /vendor/bin/time_daemon
-    class late_start
+    class main
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
