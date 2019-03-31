@@ -179,3 +179,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+# ZRAM
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.config.zram=true

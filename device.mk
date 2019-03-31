@@ -149,12 +149,9 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.urd \
-    init.goodix.sh \
-    init.urd.power.rc \
     init.urd.rc \
     init.urd.sh \
     init.urd.usb.rc \
-    init.urd.power.rc \
     ueventd.urd.rc
 
 # Input
