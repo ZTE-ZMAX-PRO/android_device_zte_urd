@@ -92,7 +92,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false
+    persist.media.treble_omx=false \
+    mm.enable.smoothstreaming=false \
+    mm.enable.sec.smoothstreaming=false \
+    media.stagefright.log-uri=1 \
+    media.stagefright.use-awesome=false \
+    media.stagefright.enable-player=true \
+    media.stagefright.enable-http=true \
+    media.stagefright.enable-aac=true \
+    media.stagefright.enable-qcp=true \
+    media.stagefright.enable-fma2dp=true \
+    media.stagefright.enable-scan=true \
+    media.aac_51_output_enabled=true \
+    mmp.enable.3g2=true \
+    ro.media.enc.aud.fileformat=qcp \
+    ro.media.enc.aud.codec=qcelp \
+    ro.media.enc.aud.bps=13300 \
+    ro.media.enc.aud.ch=1 \
+    ro.media.enc.aud.hz=8000 \
+    av.offload.enable=false \
+    vendor.use.voice.path.for.pcm.voip=false \
+    media.msm8956.version=0 \
+    media.msm8956hw=0 \
+    mm.enable.qcom_parser=135715 \
+    vidc.enc.dcvs.extra-buff-count=2 \
+    vidc.enc.narrow.searchrange=1 \
+    mm.enable.sec.smoothstreaming=false
 
 # NITZ
 PRODUCT_PROPERTY_OVERRIDES += \
