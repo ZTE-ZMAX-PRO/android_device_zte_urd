@@ -122,8 +122,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8952 \
+    libdisplayconfig \
+    libhwc2on1adapter \
+    libqdMetaData.system \
     gralloc.msm8952 \
+    copybit.msm8952 \
     hwcomposer.msm8952 \
     memtrack.msm8952
 

@@ -47,28 +47,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
-    debug.sf.latch_unsignaled=1 \
     debug.egl.hw=1 \
-    debug.enable.sglscale=1 \
+    persist.hwc.mdpcomp.enable=true \
     debug.mdpcomp.logs=0 \
-    debug.cpurend.vsync=false \
-    debug.sf.disable_backpressure=1 \
-    debug.sf.recomputecrop=0 \
-    debug.sf.latch_unsignaled=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
-    persist.hwc.mdpcomp.enable=true \
-    persist.hwc.downscale_threshold=1.15 \
-    persist.hwc.enable_vds=0 \
-    persist.debug.wfd.enable=1 \
-    qcom.hw.aac.encoder=true \
+    debug.enable.sglscale=1 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=480 \
-    ro.qualcomm.cabl=0 \
-    vendor.display.disable_skip_validate=1 \
-    vendor.display.enable_default_color_mode=1 \
-    vendor.display.perf_hint_window=50 \
-    vendor.gralloc.enable_fb_ubwc=1 \
+    debug.hwui.use_buffer_age=false
 
 # Dex2oat optimisation
 # use all Cores during bootup dex compilation
