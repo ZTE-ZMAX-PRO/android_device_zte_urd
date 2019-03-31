@@ -152,6 +152,7 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.urd \
+    init.urd.power.rc \
     init.urd.rc \
     init.urd.sh \
     init.urd.usb.rc \
