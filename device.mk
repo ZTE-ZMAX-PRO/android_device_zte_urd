@@ -151,12 +151,12 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.urd \
-    init.urd.power.rc \
-    init.urd.rc \
-    init.urd.sh \
-    init.urd.usb.rc \
-    ueventd.urd.rc
+    fstab.qcom \
+    init.qcom.power.rc \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.usb.rc \
+    ueventd.qcom.rc
 
 # Input
 PRODUCT_COPY_FILES += \

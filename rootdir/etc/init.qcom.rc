@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.urd.power.rc
-import init.urd.usb.rc
+import init.qcom.power.rc
+import init.qcom.usb.rc
 
 on early-init
     symlink /data/tombstones /tombstones
@@ -60,7 +60,7 @@ on init
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all ./fstab.urd
+    mount_all ./fstab.qcom
 
 on post-fs-data
     # Create directory for tombstone
@@ -296,7 +296,7 @@ service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks
 
-service vendor.qcom-sh /vendor/bin/init.urd.sh
+service vendor.qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     seclabel u:r:qti_init_shell:s0
@@ -370,4 +370,4 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
-    swapon_all ./fstab.urd
+    swapon_all ./fstab.qcom
