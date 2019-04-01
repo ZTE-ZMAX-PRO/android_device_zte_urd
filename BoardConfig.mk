@@ -176,6 +176,9 @@ TARGET_LD_SHIM_LIBS := \
 # RIL
 TARGET_RIL_VARIANT := caf
 
+# Vendor security patch level
+VENDOR_SECURITY_PATCH := 2017-08-01
+
 # Sepolicy
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy

@@ -248,9 +248,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-zte.conf:system/etc/thermal-engine-zte.conf
 
-# Vendor security patch level
-VENDOR_SECURITY_PATCH := 2017-08-01
-
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
