@@ -17,38 +17,35 @@
 #define LOG_TAG "android.hardware.light@2.0-service.urd"
 
 #include <hidl/HidlTransportSupport.h>
-#include <utils/Errors.h>
 
 #include "Light.h"
 
-// libhwbinder:
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-// Generated HIDL files
 using android::hardware::light::V2_0::ILight;
 using android::hardware::light::V2_0::implementation::Light;
 
-const static std::string kBacklightPath = "/sys/class/leds/lcd-backlight/brightness";
-const static std::string kIndicatorPathR = "/sys/class/leds/red/brightness";
-const static std::string kIndicatorPathG = "/sys/class/leds/green/brightness";
-const static std::string kIndicatorPathB = "/sys/class/leds/blue/brightness";
+using android::OK;
+using android::sp;
+using android::status_t;
 
 int main() {
     android::sp<ILight> service = new Light();
 
     configureRpcThreadpool(1, true);
 
-    android::status_t status = service->registerAsService();
-
-    if (status != android::OK) {
-        ALOGE("Cannot register Light HAL service");
+    status_t status = service->registerAsService();
+    if (status != OK) {
+        ALOGE("Cannot register Light HAL service.");
         return 1;
     }
 
-    ALOGI("Light HAL Ready.");
+    ALOGI("Light HAL service ready.");
+
     joinRpcThreadpool();
-    // Under normal cases, execution will not reach this line.
-    ALOGE("Light HAL failed to join thread pool.");
+
+    ALOGI("Light HAL service failed to join thread pool.");
     return 1;
 }
+
