@@ -122,10 +122,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8952 \
     memtrack.msm8952
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    Doze
-
 # Gesture Handler
 PRODUCT_PACKAGES += \
     GestureHandler
@@ -267,6 +263,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
+
+# ZTE Parts
+PRODUCT_PACKAGES += \
+    ZTEParts
 
 # HIDL HALS
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
