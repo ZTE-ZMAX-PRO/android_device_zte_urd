@@ -95,7 +95,8 @@ on post-fs-data
     mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
 
     # Create directory for camera
-    mkdir /data/vendor/qcam/ 0770 camera camera
+    mkdir /data/camera 0770 media camera
+    mkdir /data/misc/camera 0770 camera camera
 
     # Create directory for CNE
     mkdir /data/connectivity 0771 system system
