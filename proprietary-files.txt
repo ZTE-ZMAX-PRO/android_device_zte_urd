@@ -407,8 +407,10 @@ vendor/lib/libthermalclient.so
 vendor/bin/time_daemon|5ba8f7261ce833acc77c4619b497ccbf7ea09b4c
 vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
 
-# Widevine - from angler - OPR6.170623.017 factory image
-vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
+# Widevine - from daisy - PKQ1.180917.001.V10.0.1.0.PDLMIFJ
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine|9743c4ecd0fb8773795bcbfbb406f25616c04129
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|5a01d337c1d375ee24a6c8992ba91f54afb7637e
+vendor/lib64/libwvhidl.so|a3444ac0deb8144a08ba2ed1dad2f2369096c7af
 
 # GPS
 etc/permissions/com.qti.location.sdk.xml

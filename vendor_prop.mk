@@ -62,6 +62,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.boot-dex2oat-threads=8
 
+# DRM
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=1
+
 # use 4 cores durning normal dex compilation (app installations)
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-threads=4
