@@ -497,14 +497,3 @@ vendor/lib64/libsystem_health_mon.so|25c4479ed127900d0a78e3ac88dd9aa6052c88f0
 vendor/lib64/libxml.so|b94c11421b919e069d0c30b868acb76ba43674dd
 vendor/lib/libmdmdetect.so|615cf097dc510acf2187880429aa57b37700b866
 vendor/qcril.db|963f2335d321070044e32f023487b73fd8ac2597
-
-# DRM
-bin/qseecomd:recovery/root/sbin/qseecomd
-vendor/lib64/hw/keystore.msm8952.so:recovery/root/vendor/lib64/hw/keystore.msm8952.so
-vendor/lib64/libdiag.so:recovery/root/vendor/lib64/libdiag.so
-vendor/lib64/libdrmfs.so:recovery/root/vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so:recovery/root/vendor/lib64/libdrmtime.so
-vendor/lib64/libQSEEComAPI.so:recovery/root/vendor/lib64/libQSEEComAPI.so
-vendor/lib64/librpmb.so:recovery/root/vendor/lib64/librpmb.so
-vendor/lib64/libssd.so:recovery/root/vendor/lib64/libssd.so
-vendor/lib64/libtime_genoff.so:recovery/root/vendor/lib64/libtime_genoff.so
