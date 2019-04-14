@@ -92,7 +92,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false \
     mm.enable.smoothstreaming=false \
     mm.enable.sec.smoothstreaming=false \
     media.stagefright.log-uri=1 \
