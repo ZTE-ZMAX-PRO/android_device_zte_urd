@@ -87,7 +87,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_NON_TREBLE_CAMERA := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-	/system/bin/mediaserver=23 \
 	/system/vendor/bin/mm-qcamera-daemon=23
 
 # Dex
@@ -149,6 +148,12 @@ TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Malloc
+MALLOC_SVELTE := true
+
+# Media
+TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Power
 TARGET_HAS_NO_WIFI_STATS := true
