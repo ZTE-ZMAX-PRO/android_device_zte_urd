@@ -18,12 +18,12 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # Inherit device configuration
 $(call inherit-product, device/zte/urd/full_urd.mk)
 
-# Inherit some common AOSP stuff.
-$(call inherit-product, vendor/aosp/common.mk)
+# Inherit some common Resurrection Remix stuff.
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := urd
-PRODUCT_NAME := aosp_urd
+PRODUCT_NAME := rr_urd
 PRODUCT_BRAND := ZTE
 PRODUCT_MODEL := Z981
 PRODUCT_MANUFACTURER := ZTE

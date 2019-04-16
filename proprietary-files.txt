@@ -80,7 +80,7 @@ vendor/lib64/libbt-hidlclient.so|0b0b69ef9787e3cd5409f0050cad03698dd6ce26
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
-lib/hw/camera.msm8952.so:vendor/lib/hw/camera.vendor.msm8952.so
+lib/hw/camera.msm8952.so:vendor/lib/hw/camera.msm8952.so
 lib/libmmcamera_interface.so:vendor/lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so:vendor/lib/libmmjpeg_interface.so
 lib/libmm-qcamera.so:vendor/lib/libmm-qcamera.so
