@@ -103,6 +103,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-fma2dp=true \
     media.stagefright.enable-scan=true \
     media.aac_51_output_enabled=true \
+    media.settings.xml=/vendor/etc/media_profiles_vendor.xml \
     mmp.enable.3g2=true \
     ro.media.enc.aud.fileformat=qcp \
     ro.media.enc.aud.codec=qcelp \
@@ -116,6 +117,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.qcom_parser=135715 \
     vidc.enc.dcvs.extra-buff-count=2 \
     vidc.enc.narrow.searchrange=1 \
+    media.camera.ts.monotonic=1 \
     mm.enable.sec.smoothstreaming=false
 
 # NITZ
