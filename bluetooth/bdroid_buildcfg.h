@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,15 +17,14 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME             "Z981"
+#include <cutils/properties.h>
+#include <string.h>
 
-#define BLE_VND_INCLUDED               TRUE
-#define BLUETOOTH_QTI_SW               TRUE
-#define BT_CLEAN_TURN_ON_DISABLED      TRUE
-#define BTM_SCO_ENHANCED_SYNC_ENABLED  FALSE
-#define MAX_ACL_CONNECTIONS            16
-
-/* Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec */
-#define AVDT_NUM_SEPS                  12
-
+#define BTM_DEF_LOCAL_NAME "Z981"
+#define BLUETOOTH_QTI_SW TRUE
+#define MAX_ACL_CONNECTIONS   7
+#define MAX_L2CAP_CHANNELS    16
+#define BLE_VND_INCLUDED   TRUE
+#define BT_CLEAN_TURN_ON_DISABLED TRUE
+#define BTM_SCO_ENHANCED_SYNC_ENABLED FALSE
 #endif
