@@ -130,6 +130,9 @@ on post-fs-data
     mkdir /data/misc/location/quipc 0770 gps system
     mkdir /data/misc/location/xtwifi 0770 gps gps
 
+    # Create /data/time folder for time-services
+    mkdir /data/vendor/time/ 0700 system system
+
     # Create directory for MobiCore
     mkdir /data/app/mcRegistry 0775 system system
     symlink /persist/tee/00000000.authtokcont.backup /data/app/mcRegistry/00000000.authtokcont.backup
@@ -146,9 +149,6 @@ on post-fs-data
     # Create directory for perfd
     mkdir /data/misc/perfd 2755 root system
     mkdir /data/system/perfd 2770 root system
-
-    # Create /data/vendor/time folder for time-services
-    mkdir /data/vendor/time/ 0700 system system
 
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
@@ -347,7 +347,7 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.time_daemon /vendor/bin/time_daemon
-    class main
+    class late_start
     user root
     group root
     writepid /dev/cpuset/system-background/tasks

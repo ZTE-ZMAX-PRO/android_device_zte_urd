@@ -180,10 +180,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.cutoff_voltage_mv=3200
 
-# Time services
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.delta_time.enable=true
-
 #UI efficiency props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.min.fling_velocity=160 \
