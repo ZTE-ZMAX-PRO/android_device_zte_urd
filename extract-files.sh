@@ -26,7 +26,7 @@
 
     CM_ROOT="$MY_DIR"/../../..
 
-    HELPER="$CM_ROOT"/vendor/rr/build/tools/extract_utils.sh
+    HELPER="$CM_ROOT"/vendor/lineage/build/tools/extract_utils.sh
     if [ ! -f "$HELPER" ]; then
         echo "Unable to find helper script at $HELPER"
         exit 1

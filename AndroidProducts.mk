@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/rr_urd.mk
+    $(LOCAL_DIR)/lineage_urd.mk
