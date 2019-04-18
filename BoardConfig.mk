@@ -79,13 +79,8 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_READ_ADDR_FROM_PROP := true
 
 # Camera
-# Force camera module to be compiled only in 32-bit mode on 64-bit systems
-# Once camera module can run in the native mode of the system (either
-# 32-bit or 64-bit), the following line should be deleted
-BOARD_QTI_CAMERA_32BIT_ONLY := true
+TARGET_USES_MEDIA_EXTENSIONS := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_USES_NON_TREBLE_CAMERA := true
-TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
 	/system/vendor/bin/mm-qcamera-daemon=23
 
@@ -149,9 +144,6 @@ TARGET_PROVIDES_KEYMASTER := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Malloc
-MALLOC_SVELTE := true
-
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
@@ -173,7 +165,7 @@ USE_SENSOR_MULTI_HAL := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/hw/camera.msm8952.so|libshim_camera.so \
+    /system/vendor/lib/hw/camera.vendor.msm8952.so|libshim_camera.so \
     /system/vendor/lib/libizat_core.so|/system/vendor/lib/libshim_gps.so \
     /system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so \
     /system/vendor/lib64/hw/gxfingerprint.default.so|/system/vendor/lib64/libshim_atomic.so 
