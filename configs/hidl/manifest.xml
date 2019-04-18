@@ -46,6 +46,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.cas</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMediaCasService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
@@ -57,19 +66,17 @@
     <hal format="hidl">
         <name>android.hardware.drm</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>ICryptoFactory</name>
+            <instance>clearkey</instance>
             <instance>default</instance>
-            <instance>widevine</instance>
         </interface>
         <interface>
             <name>IDrmFactory</name>
+            <instance>clearkey</instance>
             <instance>default</instance>
-            <instance>widevine</instance>
         </interface>
-        <fqname>@1.1::ICryptoFactory/clearkey</fqname>
-        <fqname>@1.1::IDrmFactory/clearkey</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
@@ -102,10 +109,10 @@
         <name>android.hardware.graphics.composer</name>
         <transport>hwbinder</transport>
         <version>2.1</version>
-	<interface>
+        <interface>
             <name>IComposer</name>
             <instance>default</instance>
-	</interface>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
@@ -166,15 +173,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.nfc</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>INfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.power</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
@@ -224,24 +222,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.tetheroffload.config</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOffloadConfig</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.tetheroffload.control</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOffloadControl</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.thermal</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -278,20 +258,20 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.wifi.hostapd</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IHostapd</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.wifi.supplicant</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
         <interface>
             <name>ISupplicant</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.fm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFmHci</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -313,11 +293,11 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.fm</name>
+        <name>vendor.lineage.power</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>IFmHci</name>
+            <name>ILineagePower</name>
             <instance>default</instance>
         </interface>
     </hal>
