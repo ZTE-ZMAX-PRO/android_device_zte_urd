@@ -30,6 +30,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=smd
 
+# CABL
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.cabl=0
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
@@ -39,10 +43,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.camera.ts.monotonic=1 \
     persist.camera.stats.test=5
 
-# Core Control
+# Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.core_ctl_min_cpu=2 \
-    ro.core_ctl_max_cpu=4
+    persist.debug.coresight.config=stm-events
+
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.boot-dex2oat-threads=4 \
+    dalvik.vm.dex2oat-threads=2 \
+    dalvik.vm.image-dex2oat-threads=4 \
+    dalvik.vm.isa.arm.features=default \
+    dalvik.vm.isa.arm.variant=cortex-a53
+
+# DEX
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.dex2oat_thread_count=4
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -57,38 +72,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
     debug.hwui.use_buffer_age=false
 
-# Dex2oat optimisation
-# use all Cores during bootup dex compilation
+# DRM
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.boot-dex2oat-threads=8
-
-# use 4 cores durning normal dex compilation (app installations)
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-threads=4
-
-# use 4 cores during boot image dex compilation
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.image-dex2oat-threads=4
-
-# Enable music through deep buffer
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio.deep_buffer.media=true
-
-# Enable downsampling for multi-channel content > 48Khz
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio.playback.mch.downsample=true
-
-# Factory Reset Protection
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/platform/soc.0/7824900.sdhci/by-name/config
+    drm.service.enabled=true
 
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.fingerprint=goodix
-
-#low audio flinger standby delay to reduce power consumption
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.audio.flinger_standbytime_ms=300
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -134,16 +124,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.enable_prefetch=1 \
-    vendor.iop.enable_uxe=1 \
-    vendor.iop.enable_prefetch_ofr=1 \
-    vendor.perf.iop_v3.enable=1 \
-    persist.vendor.qti.games.gt.prof=1 \
+    ro.vendor.gt_library=libqti-gt.so \
     ro.vendor.at_library=libqti-at.so \
+    ro.vendor.core_ctl_min_cpu=2 \
+    ro.vendor.core_ctl_max_cpu=4 \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.qti.core_ctl_min_cpu=2 \
-    ro.vendor.qti.core_ctl_max_cpu=4 \
-    ro.vendor.qti.sys.fw.bg_apps_limit=60
+    sys.games.gt.prof=0 \
+    sched.colocate.enable=1
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -176,14 +163,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.radio.aosp_usr_pref_sel=true
 
-# set cutoff voltage to 3200mV
+#Trim properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cutoff_voltage_mv=3200
-
-#UI efficiency props
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.min.fling_velocity=160 \
-    ro.max.fling_velocity=20000
+    ro.vendor.qti.sys.fw.use_trim_settings=true \
+    ro.vendor.qti.sys.fw.empty_app_percent=50 \
+    ro.vendor.qti.sys.fw.trim_empty_percent=100 \
+    ro.vendor.qti.sys.fw.trim_cache_percent=100 \
+    ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -192,3 +178,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # ZRAM
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.config.zram=true
+
+#
+# OTHER
+#
+
+# Set max background services
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.max_starting_bg=8
+
+# Enable B service adj transition by default
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.bservice_enable=true
+
+# Cutoff voltage (mV)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cutoff_voltage_mv=3200
