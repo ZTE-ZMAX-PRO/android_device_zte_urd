@@ -394,13 +394,13 @@ vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 vendor/lib/libthermalclient.so
 
-# Time services
--app/TimeService/TimeService.apk
-bin/time_daemon
--vendor/lib64/libtime_genoff.so
--vendor/lib64/libTimeService.so
--vendor/lib/libtime_genoff.so
--vendor/lib/libTimeService.so
+# Time services - from ZTE Axon 7 Mini Nougat
+-app/TimeService/TimeService.apk|fd87a359eab45fe5e80e00c23fdaef9de3b67ae0
+bin/time_daemon|24f3e81c5748b15604a0d559a65d925126ed7911
+-vendor/lib64/libtime_genoff.so|369568253c949b6135902b7bf28095f4e895f7d1
+-vendor/lib64/libTimeService.so|83a1ad10874cbe1494e915920eebe350a296e6e2
+-vendor/lib/libtime_genoff.so|6319be37d4893666873efc4704c60d6030fbb64f
+-vendor/lib/libTimeService.so|e92e187abaead06b28ab8858af29bf5cd10da380
 
 # Widevine
 vendor/lib/libWVStreamControlAPI_L3.so
