@@ -164,6 +164,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8952
+
 # LiveDisplay
 #PRODUCT_PACKAGES += \
 #    pp_calib_data_zteSAM-S6E3FA3_SAM_10801920_6P0Inch.xml
