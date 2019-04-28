@@ -141,9 +141,6 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:$(TA
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Power
 TARGET_HAS_NO_WIFI_STATS := true
 TARGET_RPM_SYSTEM_STAT := /d/rpm_stats
