@@ -117,9 +117,6 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Exclude serif fonts for saving system.img size.
-EXCLUDE_SERIF_FONTS := true
-
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -142,7 +139,7 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/qwerty.kl:$(TA
 TARGET_PROVIDES_KEYMASTER := true
 
 # Power
-TARGET_HAS_NO_WIFI_STATS := true
+TARGET_HAS_NO_WLAN_STATS := true
 TARGET_RPM_SYSTEM_STAT := /d/rpm_stats
 TARGET_USES_INTERACTION_BOOST := true
 
