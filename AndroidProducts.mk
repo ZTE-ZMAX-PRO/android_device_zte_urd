@@ -1,6 +1,6 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_urd.mk
+    $(LOCAL_DIR)/aosp_urd.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_urd-userdebug \
-    arrow_urd-eng
+    aosp_urd-userdebug \
+    aosp_urd-eng

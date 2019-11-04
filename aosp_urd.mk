@@ -16,8 +16,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Arrow stuff.
-$(call inherit-product, vendor/arrow/config/common.mk)
+# Inherit some common PixelExperience stuff.
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm64
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/zte/urd/device.mk)
@@ -29,7 +31,7 @@ TARGET_BOOTANIMATION_HALF_RES := true
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := urd
-PRODUCT_NAME := arrow_urd
+PRODUCT_NAME := aosp_urd
 PRODUCT_RELEASE_NAME := urd
 PRODUCT_BRAND := ZTE
 PRODUCT_MANUFACTURER := ZTE
@@ -41,5 +43,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
-    
+
 BUILD_FINGERPRINT := ZTE/P895T20_MPCS/urd:6.0.1/MMB29M/20170802.130758:user/release-keys
