@@ -135,17 +135,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/configs/xtwifi.conf:system/etc/xtwifi.conf
 
-# Init
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.bt.sh \
-    init.qcom.power.rc \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.usb.rc \
-    init.recovery.qcom.rc \
-    ueventd.qcom.rc
-
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/syna-touchscreen.idc:system/usr/idc/syna-touchscreen.idc
@@ -213,6 +202,10 @@ PRODUCT_PACKAGES += \
 # Qualcomm dependencies
 PRODUCT_PACKAGES += \
     libtinyxml
+
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,${LOCAL_PATH}/rootdir,root)
 
 # RIL
 PRODUCT_PACKAGES += \
